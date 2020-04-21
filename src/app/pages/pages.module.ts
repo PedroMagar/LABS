@@ -7,6 +7,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
+import { StartModule } from './start/start.module';
+import { ModeloModule } from './modelo/modelo.module';
 
 @NgModule({
   imports: [
@@ -16,6 +18,8 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
+    StartModule,
+    ModeloModule,
   ],
   declarations: [
     PagesComponent,
