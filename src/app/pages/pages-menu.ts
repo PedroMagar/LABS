@@ -19,7 +19,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
-    link: '/pages/dashboard'
+    link: '/pages/dashboard',
   },
   {
     title: 'IoT Dashboard',
