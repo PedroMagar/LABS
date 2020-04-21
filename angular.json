@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-admin-demo": {
+    "labs-demo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -82,18 +82,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-admin-demo:build"
+            "browserTarget": "labs-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-admin-demo:build:production"
+              "browserTarget": "labs-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-admin-demo:build"
+            "browserTarget": "labs-demo:build"
           }
         },
         "test": {
@@ -150,7 +150,7 @@
         }
       }
     },
-    "ngx-admin-demo-e2e": {
+    "labs-demo-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -159,7 +159,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "ngx-admin-demo:serve"
+            "devServerTarget": "labs-demo:serve"
           }
         },
         "lint": {
@@ -174,7 +174,7 @@
       }
     }
   },
-  "defaultProject": "ngx-admin-demo",
+  "defaultProject": "labs-demo",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",
