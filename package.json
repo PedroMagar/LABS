@@ -4,10 +4,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akveo/labs.git"
+    "url": "git+https://github.com/PedroMagar/LABS.git"
   },
   "bugs": {
-    "url": "https://github.com/akveo/labs/issues"
+    "url": "https://github.com/PedroMagar/LABS/issues"
   },
   "scripts": {
     "ng": "ng",
