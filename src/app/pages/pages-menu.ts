@@ -20,8 +20,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'MODELO',
     group: true,
-    children: [
-    
+    children: [    
   {
     title: 'MODELO',
     icon: 'loader-outline',
@@ -37,8 +36,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'home-outline',
     link: '/pages/iot-dashboard',
   },
- 
-  {
+   {
     title: 'FEATURES',
     group: true,
   },

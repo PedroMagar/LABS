@@ -11,8 +11,7 @@ interface CardSettings {
   styleUrls: ['./amostra-perfil.component.scss'],
   templateUrl: './amostra-perfil.component.html',
 })
-export class AmostraPerfilComponent implements OnDestroy {
-  
+export class AmostraPerfilComponent implements OnDestroy {  
   constructor() { }
 
   ngOnDestroy() {
