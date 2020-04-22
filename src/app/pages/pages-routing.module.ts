@@ -7,6 +7,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 import { StartComponent } from './start/start.component';
+import { AmostrasComponent } from './amostras/amostras.component';
 import { ModeloComponent } from './modelo/modelo.component';
 
 const routes: Routes = [{
@@ -16,6 +17,10 @@ const routes: Routes = [{
     {
       path: 'inicio',
       component: StartComponent,
+    },
+    {
+      path: 'amostras',
+      component: AmostrasComponent,
     },
     {
       path: 'modelo',

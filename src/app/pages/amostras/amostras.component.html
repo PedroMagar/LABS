@@ -1,0 +1,21 @@
+<nb-card>
+  <nb-card-header>
+    Minhas Amostras
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+<div class="row">
+  <div class="col-xxxl-12">
+    <nb-card>
+    <nb-card-header>Minhas Amostras</nb-card-header>
+    <nb-card-body> Conteudo do cartão</nb-card-body>
+  </nb-card>
+  </div>
+</div>
+</nb-card>
