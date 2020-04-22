@@ -10,7 +10,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 
 import { StartModule } from './start/start.module';
 import { ModeloModule } from './modelo/modelo.module';
-import { AmostrasModule } from './amostras/amostras.module'
+import { AmostrasModule } from './amostras/amostras.module';
 
 @NgModule({
   imports: [

@@ -1,9 +1,6 @@
-import {Component, OnDestroy} from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators' ;
-
+import {Component} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { SmartTableData } from  '../../@core/data/smart-table';
+import { SmartTableData } from '../../@core/data/smart-table';
 
 interface CardSettings {
   title: string;
