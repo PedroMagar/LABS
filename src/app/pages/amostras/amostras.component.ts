@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableData } from '../../@core/data/smart-table';
+import { AmostrasTableData } from '../../@core/data/amostras-table';
 
 interface CardSettings {
   title: string;
@@ -35,38 +36,38 @@ export class AmostrasComponent {
         title: 'ID',
         type: 'number',
       },
-      firstName: {
-        title: 'First Name',
+      Nome: {
+        title: 'Nome',
         type: 'string',
       },
-      lastName: {
-        title: 'Last Name',
+      Matriz: {
+        title: 'Matriz',
         type: 'string',
       },
-      username: {
-        title: 'Username',
+      Dopante: {
+        title: 'Dopante',
         type: 'string',
       },
-      email: {
-        title: 'E-mail',
+      Autor: {
+        title: 'Autor',
         type: 'string',
       },
-      age: {
-        title: 'Age',
-        type: 'number',
+      Local: {
+        title: 'Local',
+        type: 'string',
       },
     },
   };
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableData) {
+  constructor(private service: AmostrasTableData) {
     const data = this.service.getData();
     this.source.load(data);
   }
 
   onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm('Tem certeza que deseja apagar a amostra?')) {
       event.confirm.resolve();
     } else {
       event.confirm.reject();

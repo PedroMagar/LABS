@@ -1,62 +1,62 @@
 import { Injectable } from '@angular/core';
-import { SmartTableData } from '../data/smart-table';
+import { AmostrasTableData } from '../data/amostras-table';
 
 @Injectable()
-export class AmostraTableService extends SmartTableData {
+export class AmostraTableService extends AmostrasTableData {
 
   data = [{
     id: 1,
     Nome: 'TZ Eu Ag',
-    Matiz: 'TZO',
+    Matriz: 'TZO',
     Dopante: 'Eu Ag',
     Autor: 'Augusto',
     Local: 'Gaveta',
   }, {
     id: 2,
     Nome: 'TZ Eu',
-    Matiz: 'TZO',
+    Matriz: 'TZO',
     Dopante: 'Eu',
     Autor: 'Augusto',
     Local: 'Gaveta',
   }, {
     id: 3,
     Nome: 'TZN Eu',
-    Matiz: 'TZNO',
+    Matriz: 'TZNO',
     Dopante: 'Eu',
     Autor: 'Augusto',
     Local: 'Gaveta',
   },{
     id: 4,
     Nome: 'TZ Eu Ag',
-    Matiz: 'TZO',
+    Matriz: 'TZO',
     Dopante: 'Eu Ag',
     Autor: 'Augusto',
     Local: 'Gaveta',
   },{
     id: 5,
     Nome: 'GP Eu',
-    Matiz: 'GPO',
+    Matriz: 'GPO',
     Dopante: 'Eu',
     Autor: 'Augusto',
     Local: 'Gaveta',
   },{
     id: 6,
     Nome: 'GP Eu Ag',
-    Matiz: 'GPO',
+    Matriz: 'GPO',
     Dopante: 'Eu Ag',
     Autor: 'Augusto',
     Local: 'Gaveta',
   },{
     id: 7,
     Nome: 'GP Eu Au',
-    Matiz: 'GPO',
+    Matriz: 'GPO',
     Dopante: 'Eu Au',
     Autor: 'Augusto',
     Local: 'Gaveta',
   },{
     id: 8,
     Nome: 'TZA Eu',
-    Matiz: 'TZAO',
+    Matriz: 'TZAO',
     Dopante: 'Eu',
     Autor: 'Augusto',
     Local: 'Gaveta',
