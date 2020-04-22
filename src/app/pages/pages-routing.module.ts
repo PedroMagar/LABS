@@ -9,6 +9,7 @@ import { NotFoundComponent } from './miscellaneous/not-found/not-found.component
 import { StartComponent } from './start/start.component';
 import { AmostrasComponent } from './amostras/amostras.component';
 import { ModeloComponent } from './modelo/modelo.component';
+import { AmostraPerfilComponent } from './amostra-perfil/amostra-perfil.component';
 
 const routes: Routes = [{
   path: '',
@@ -21,6 +22,10 @@ const routes: Routes = [{
     {
       path: 'amostras',
       component: AmostrasComponent,
+    },
+    {
+      path: 'amostra-perfil',
+      component: AmostraPerfilComponent,
     },
     {
       path: 'modelo',

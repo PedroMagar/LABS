@@ -9,13 +9,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Amostras',
-    icon: 'layout-outline',
+    icon: 'grid-outline',
     link: '/pages/amostras',
+  },
+  {
+    title: 'Perfil da Amostra',
+    icon: 'cube-outline',
+    link: '/pages/amostra-perfil',
   },
   {
     title: 'MODELO',
     group: true,
-  },
+    children: [
+    
   {
     title: 'MODELO',
     icon: 'loader-outline',
@@ -31,6 +37,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'home-outline',
     link: '/pages/iot-dashboard',
   },
+ 
   {
     title: 'FEATURES',
     group: true,
@@ -263,4 +270,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  ],
+},
 ];
