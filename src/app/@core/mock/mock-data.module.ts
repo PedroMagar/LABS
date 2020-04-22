@@ -44,7 +44,7 @@ const SERVICES = [
   StatsProgressBarService,
   VisitorsAnalyticsService,
   SecurityCamerasService,
-  AmostraTableService,
+  AmostraTableService, // feito por JAMG para funcionar amostras mock
 ];
 
 @NgModule({
