@@ -2,14 +2,8 @@ import {Component} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { AmostrasTableData } from '../../@core/data/amostras-table';
 
-interface CardSettings {
-  title: string;
-  iconClass: string;
-  type: string;
-}
-
 @Component({
-  selector: 'ngx-modelo',
+  selector: 'ngx-amostras',
   styleUrls: ['./amostras.component.scss'],
   templateUrl: './amostras.component.html',
 })

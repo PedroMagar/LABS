@@ -20,7 +20,6 @@ import { AmostrasComponent } from './amostras.component';
 import { StatusCardComponent } from './status-card/status-card.component';
 import { FormsModule } from '@angular/forms';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { AmIconComponent } from './amos-grid/amos-grid.component';
 
 @NgModule({
   imports: [
@@ -47,7 +46,6 @@ import { AmIconComponent } from './amos-grid/amos-grid.component';
   declarations: [
     AmostrasComponent,
     StatusCardComponent,
-    AmIconComponent,
   ],
 })
 export class AmostrasModule { }
