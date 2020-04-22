@@ -25,35 +25,35 @@ export class AmostraTableService extends AmostrasTableData {
     Dopante: 'Eu',
     Autor: 'Augusto',
     Local: 'Gaveta',
-  },{
+  }, {
     id: 4,
     Nome: 'TZ Eu Ag',
     Matriz: 'TZO',
     Dopante: 'Eu Ag',
     Autor: 'Augusto',
     Local: 'Gaveta',
-  },{
+  }, {
     id: 5,
     Nome: 'GP Eu',
     Matriz: 'GPO',
     Dopante: 'Eu',
     Autor: 'Augusto',
     Local: 'Gaveta',
-  },{
+  }, {
     id: 6,
     Nome: 'GP Eu Ag',
     Matriz: 'GPO',
     Dopante: 'Eu Ag',
     Autor: 'Augusto',
     Local: 'Gaveta',
-  },{
+  }, {
     id: 7,
     Nome: 'GP Eu Au',
     Matriz: 'GPO',
     Dopante: 'Eu Au',
     Autor: 'Augusto',
     Local: 'Gaveta',
-  },{
+  }, {
     id: 8,
     Nome: 'TZA Eu',
     Matriz: 'TZAO',

@@ -15,7 +15,7 @@ import {
 import { UserData } from './data/users';
 import { ElectricityData } from './data/electricity';
 import { SmartTableData } from './data/smart-table';
-import { AmostrasTableData } from './data/amostras-table';// Adicionado para tabela de amostras
+import { AmostrasTableData } from './data/amostras-table'; // Adicionado para tabela de amostras
 import { UserActivityData } from './data/user-activity';
 import { OrdersChartData } from './data/orders-chart';
 import { ProfitChartData } from './data/profit-chart';
@@ -53,7 +53,7 @@ import { StatsProgressBarService } from './mock/stats-progress-bar.service';
 import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
-import { AmostraTableService } from './mock/amostra-table.service';// Adicionado para tabela de amostras
+import { AmostraTableService } from './mock/amostra-table.service'; // Adicionado para tabela de amostras
 
 const socialLinks = [
   {
