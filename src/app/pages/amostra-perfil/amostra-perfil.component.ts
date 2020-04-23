@@ -1,6 +1,4 @@
 import {Component, OnDestroy} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 interface CardSettings {
   title: string;
@@ -15,8 +13,6 @@ interface CardSettings {
 })
 export class AmostraPerfilComponent implements OnDestroy {
   constructor(
-    private route: ActivatedRoute,
-    private location: Location
   ) {}
 
   ngOnDestroy() {
