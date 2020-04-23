@@ -1,3 +1,15 @@
+<div>
+  <nb-card class="actions-card">
+    <nb-card-header>Menu de Ações</nb-card-header>
+    <nb-card-body>
+      <nb-actions size="medium">
+        <nb-action icon="loader-outline" ></nb-action>
+        <nb-action icon="search-outline"></nb-action>
+        <nb-action icon="settings-2-outline"></nb-action>
+      </nb-actions>
+    </nb-card-body>
+  </nb-card>
+</div>
 <div class="row">
   <div class="col-xxxl-3 col-md-6" *ngFor="let statusCard of statusCards">
     <ngx-status-card [title]="statusCard.title" [type]="statusCard.type">

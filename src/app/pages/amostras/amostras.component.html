@@ -1,7 +1,9 @@
 <nb-card>
   <div class="row">
     <nb-card-body>
-      <button type="submit" nbButton status="primary">Nova Amostra</button>
+      <a href="/pages/amostra-perfil">
+        <button type="button" class="btn btn-primary" href="/pages/amostra-perfil"> Nova Amostra</button>
+      </a>
     </nb-card-body>
   </div>
 </nb-card>
@@ -12,8 +14,13 @@
   </nb-card-header>
 
   <nb-card-body>
-    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    <ul>
+    <ng2-smart-table [settings]="settings" [source]="source" 
+      (deleteConfirm)="onDeleteConfirm($event)">
+      <!-- [class.selected]="data === selectedData"
+      (click)="onSelect($event)"> -->
     </ng2-smart-table>
+    </ul>
   </nb-card-body>
 </nb-card>
 
