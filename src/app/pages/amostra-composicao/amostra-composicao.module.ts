@@ -9,16 +9,18 @@ import {
   NbSelectModule,
   NbListModule,
   NbIconModule,
+  NbInputModule, 
+  NbCheckboxModule,
+  NbDatepickerModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { AmostraComposicaoComponent } from './amostra-composicao.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule as ngFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    FormsModule,
     ThemeModule,
     NbCardModule,
     NbUserModule,
@@ -31,6 +33,10 @@ import { FormsModule } from '@angular/forms';
     NbIconModule,
     NbButtonModule,
     NgxEchartsModule,
+    NbInputModule, 
+    NbCheckboxModule,
+    NbDatepickerModule,
+    ngFormsModule,
   ],
   declarations: [
     AmostraComposicaoComponent,

@@ -1,8 +1,258 @@
-<nb-card>
-  <nb-card-header>
-    Composição da Amostra
-  </nb-card-header>
-      <nb-card-body> 
-Colocar cards resumo dos cards o form da (Composição Quimica)
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        <h4>Composição da Amostra</h4>
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Matriz:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="imputMatriz" placeholder="Matriz">
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Dopantes:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="inputDopante" placeholder="Dopante">
+            </div>
+          </div>
+          <h5 class="grid-h">Componentes da Matriz:</h5>
+        <ng-container>
+          <div class="form-group row">
+            <label class="col-6 col-sm-3 label">1º Composito da Matriz: </label>
+            <div class="col-6 col-sm-3">  
+            <nb-select selected="0">
+                <nb-option value="0">Sem</nb-option>
+                <nb-option value="1">TeO2</nb-option>
+                <nb-option value="2">GeO2</nb-option>
+                <nb-option value="3">PbO</nb-option>
+                <nb-option value="4">ZnO2</nb-option>
+              </nb-select>
+            </div>
+            <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-6 col-sm-3 label">2º Composito da Matriz: </label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="0">
+                <nb-option value="0">Sem</nb-option>
+                <nb-option value="1">TeO2</nb-option>
+                <nb-option value="2">GeO2</nb-option>
+                <nb-option value="3">PbO</nb-option>
+                <nb-option value="4">ZnO2</nb-option>
+              </nb-select>
+            </div>
+            <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-6 col-sm-3 label">3º Composito da Matriz: </label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="0">
+                <nb-option value="0">Sem</nb-option>
+                <nb-option value="1">TeO2</nb-option>
+                <nb-option value="2">GeO2</nb-option>
+                <nb-option value="3">PbO</nb-option>
+                <nb-option value="4">ZnO2</nb-option>
+              </nb-select>
+            </div>
+            <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-6 col-sm-3 label">4º Composito da Matriz: </label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="0">
+                <nb-option value="0">Sem</nb-option>
+                <nb-option value="1">TeO2</nb-option>
+                <nb-option value="2">GeO2</nb-option>
+                <nb-option value="3">PbO</nb-option>
+                <nb-option value="4">ZnO2</nb-option>
+              </nb-select>
+            </div>
+            <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+            </div>
+          </div>
+        </ng-container>
+        <div class="validation-checkboxes">
+          <label for="imputAdcionar" class="label col-6 col-sm-3">Adicionar:</label>
+          <nb-checkbox>Dopantes</nb-checkbox>
+          <nb-checkbox>NPs</nb-checkbox>
+        </div>
+        </form>
       </nb-card-body>
-</nb-card>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        <h6>Componentes Dopantes</h6>
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">1º Dopante na Matriz: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">ErO2</nb-option>
+              <nb-option value="2">NdO</nb-option>
+              <nb-option value="3">EuO2</nb-option>
+              <nb-option value="4">YbO</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">2º Dopante na Matriz: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">ErO2</nb-option>
+              <nb-option value="2">NdO</nb-option>
+              <nb-option value="3">EuO2</nb-option>
+              <nb-option value="4">YbO</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">3º Dopante na Matriz: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">ErO2</nb-option>
+              <nb-option value="2">NdO</nb-option>
+              <nb-option value="3">EuO2</nb-option>
+              <nb-option value="4">YbO</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">4º Dopante na Matriz: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">ErO2</nb-option>
+              <nb-option value="2">NdO</nb-option>
+              <nb-option value="3">EuO2</nb-option>
+              <nb-option value="4">YbO</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        <h6>Precursores de Nanoparticulas</h6>
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">1º Precursor de NPs: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">AgNO4</nb-option>
+              <nb-option value="2">AgO2</nb-option>
+              <nb-option value="3">AuO2</nb-option>
+              <nb-option value="4">Si</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">2º Precursor de NPs: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">AgNO4</nb-option>
+              <nb-option value="2">AgO2</nb-option>
+              <nb-option value="3">AuO2</nb-option>
+              <nb-option value="4">Si</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">3º Precursor de NPs: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">AgNO4</nb-option>
+              <nb-option value="2">AgO2</nb-option>
+              <nb-option value="3">AuO2</nb-option>
+              <nb-option value="4">Si</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-6 col-sm-3 label">4º Precursor de NPs: </label>
+          <div class="col-6 col-sm-3">
+            <nb-select selected="0">
+              <nb-option value="0">Sem</nb-option>
+              <nb-option value="1">AgNO4</nb-option>
+              <nb-option value="2">AgO2</nb-option>
+              <nb-option value="3">AuO2</nb-option>
+              <nb-option value="4">Si</nb-option>
+            </nb-select>
+          </div>
+          <label for="imputConcentração" class="label col-6 col-sm-3">Concentração:</label>
+          <div class="col-6 col-sm-3">
+            <input type="text" nbInput fullWidth id="imputConcentração" placeholder="%">
+          </div>
+        </div>
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="offset-sm-9 col-sm-12">
+    <button type="submit" nbButton status="primary">Atualizar</button>
+  </div>
+</div>
