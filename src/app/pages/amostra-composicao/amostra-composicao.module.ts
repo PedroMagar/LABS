@@ -9,7 +9,7 @@ import {
   NbSelectModule,
   NbListModule,
   NbIconModule,
-  NbInputModule, 
+  NbInputModule,
   NbCheckboxModule,
   NbDatepickerModule,
 } from '@nebular/theme';
@@ -33,7 +33,7 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
     NbIconModule,
     NbButtonModule,
     NgxEchartsModule,
-    NbInputModule, 
+    NbInputModule,
     NbCheckboxModule,
     NbDatepickerModule,
     ngFormsModule,
