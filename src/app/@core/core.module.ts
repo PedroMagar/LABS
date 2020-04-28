@@ -53,7 +53,7 @@ import { StatsProgressBarService } from './mock/stats-progress-bar.service';
 import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
-import { AmostraTableService } from './mock/amostra-table.service'; // Adicionado para tabela de amostras
+// import { AmostraTableService } from './mock/amostra-table.service'; // Adicionado para tabela de amostras
 import { AmostrasService } from './services/amostra-service'; // Adicionado para tabela de amostras
 
 const socialLinks = [

@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { AmostrasTableData } from '../../@core/data/amostras-table';
+// import { AmostrasTableData } from '../../@core/data/amostras-table';
 import { AmostrasService } from '../../@core/services/amostra-service';
 import { Amostra } from '../../@core/data/amostra';
 
-import { finalize } from "rxjs/operators";
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-amostras',
@@ -64,11 +64,11 @@ export class AmostrasComponent {
       .pipe(finalize(() => this.source.load(this.amostras)))
       .subscribe(
       res => {
-        //console.log("Resposta JSON:");
-        //console.log(res);
+        // console.log("Resposta JSON:");
+        // console.log(res);
         this.amostras = res;
       },
-      err => { }
+      err => { },
     );
   }
 

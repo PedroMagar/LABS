@@ -14,7 +14,7 @@ export class AmostrasService {
   private amostrasUrl = 'http://localhost:8000/amostra';  // URL to web api
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
   constructor(
@@ -22,21 +22,20 @@ export class AmostrasService {
     private messageService: MessageService) { }
 
     getData(): Observable<Amostra[]> {
-      //console.log("Tentando ler json");
-      return this.http.get<Amostra[]>(this.amostrasUrl+"/ler")
+      // console.log("Tentando ler json");
+      return this.http.get<Amostra[]>(this.amostrasUrl + '/ler')
         .pipe(
           tap(_ => this.log('fetched amostras')),
-          catchError(this.handleError<Amostra[]>('getData', []))
+          catchError(this.handleError<Amostra[]>('getData', [])),
         );
     }
 
   /** GET amostra from the server */
   getAmostras(): Observable<Amostra[]> {
-    console.log("Tentando ler json");
-    return this.http.get<Amostra[]>(this.amostrasUrl+"/ler")
+    return this.http.get<Amostra[]>(this.amostrasUrl + '/ler')
       .pipe(
         tap(_ => this.log('fetched amostras')),
-        catchError(this.handleError<Amostra[]>('getAmostras', []))
+        catchError(this.handleError<Amostra[]>('getAmostras', [])),
       );
   }
 
@@ -50,7 +49,7 @@ export class AmostrasService {
           const outcome = h ? `fetched` : `did not find`;
           this.log(`${outcome} amostra id=${id}`);
         }),
-        catchError(this.handleError<Amostra>(`getAmostra id=${id}`))
+        catchError(this.handleError<Amostra>(`getAmostra id=${id}`)),
       );
   }
 
@@ -59,7 +58,7 @@ export class AmostrasService {
     const url = `${this.amostrasUrl}/${id}`;
     return this.http.get<Amostra>(url).pipe(
       tap(_ => this.log(`fetched amostra id=${id}`)),
-      catchError(this.handleError<Amostra>(`getAmostra id=${id}`))
+      catchError(this.handleError<Amostra>(`getAmostra id=${id}`)),
     );
   }
 
@@ -73,7 +72,7 @@ export class AmostrasService {
       tap(x => x.length ?
          this.log(`found amostras matching "${term}"`) :
          this.log(`no amostras matching "${term}"`)),
-      catchError(this.handleError<Amostra[]>('searchAmostras', []))
+      catchError(this.handleError<Amostra[]>('searchAmostras', [])),
     );
   }
 
@@ -83,7 +82,7 @@ export class AmostrasService {
   addAmostra(amostra: Amostra): Observable<Amostra> {
     return this.http.post<Amostra>(this.amostrasUrl, amostra, this.httpOptions).pipe(
       tap((newAmostra: Amostra) => this.log(`added amostra w/ id=${newAmostra.id}`)),
-      catchError(this.handleError<Amostra>('addAmostra'))
+      catchError(this.handleError<Amostra>('addAmostra')),
     );
   }
 
@@ -94,7 +93,7 @@ export class AmostrasService {
 
     return this.http.delete<Amostra>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted amostra id=${id}`)),
-      catchError(this.handleError<Amostra>('deleteAmostra'))
+      catchError(this.handleError<Amostra>('deleteAmostra')),
     );
   }
 
@@ -102,7 +101,7 @@ export class AmostrasService {
   updateAmostra(amostra: Amostra): Observable<any> {
     return this.http.put(this.amostrasUrl, amostra, this.httpOptions).pipe(
       tap(_ => this.log(`updated amostra id=${amostra.id}`)),
-      catchError(this.handleError<any>('updateAmostra'))
+      catchError(this.handleError<any>('updateAmostra')),
     );
   }
 
