@@ -30,7 +30,7 @@ export class AmostraComposicaoComponent {
     this.CompDopantes[0], 0,
     this.CompDopantes[0], 0,
     this.CompDopantes[0], 0,
-    this.CompNPs[0], 1,
+    this.CompNPs[0], 0,
     this.CompNPs[0], 0,
     this.CompNPs[0], 0,
     this.CompNPs[0], 0,
