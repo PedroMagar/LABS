@@ -1,4 +1,5 @@
+import { Amostra } from './amostra';
 
 export abstract class AmostrasTableData {
-  abstract getData(): any[];
+  abstract getData(): Amostra[];
 }

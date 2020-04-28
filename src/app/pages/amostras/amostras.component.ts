@@ -1,6 +1,10 @@
 import {Component} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { AmostrasTableData } from '../../@core/data/amostras-table';
+import { AmostrasService } from '../../@core/services/amostra-service';
+import { Amostra } from '../../@core/data/amostra';
+
+import { finalize } from "rxjs/operators";
 
 @Component({
   selector: 'ngx-amostras',
@@ -29,23 +33,23 @@ export class AmostrasComponent {
         title: 'ID',
         type: 'number',
       },
-      Nome: {
+      nome: {
         title: 'Nome',
         type: 'string',
       },
-      Matriz: {
+      matriz: {
         title: 'Matriz',
         type: 'string',
       },
-      Dopante: {
+      dopante: {
         title: 'Dopante',
         type: 'string',
       },
-      Autor: {
+      autor: {
         title: 'Autor',
         type: 'string',
       },
-      Local: {
+      local: {
         title: 'Local',
         type: 'string',
       },
@@ -53,10 +57,19 @@ export class AmostrasComponent {
   };
 
   source: LocalDataSource = new LocalDataSource();
+  amostras: Amostra[] = [];
 
-  constructor(private service: AmostrasTableData) {
-    const data = this.service.getData();
-    this.source.load(data);
+  constructor(private amostraService: AmostrasService) {
+    this.amostraService.getData()
+      .pipe(finalize(() => this.source.load(this.amostras)))
+      .subscribe(
+      res => {
+        //console.log("Resposta JSON:");
+        //console.log(res);
+        this.amostras = res;
+      },
+      err => { }
+    );
   }
 
   onDeleteConfirm(event): void {

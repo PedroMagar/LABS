@@ -54,6 +54,7 @@ import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { AmostraTableService } from './mock/amostra-table.service'; // Adicionado para tabela de amostras
+import { AmostrasService } from './services/amostra-service'; // Adicionado para tabela de amostras
 
 const socialLinks = [
   {
@@ -77,7 +78,7 @@ const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
   { provide: ElectricityData, useClass: ElectricityService },
   { provide: SmartTableData, useClass: SmartTableService },
-  { provide: AmostrasTableData, useClass: AmostraTableService }, // Adicionado para tabela de amostras
+  { provide: AmostrasTableData, useClass: AmostrasService }, // Adicionado para tabela de amostras
   { provide: UserActivityData, useClass: UserActivityService },
   { provide: OrdersChartData, useClass: OrdersChartService },
   { provide: ProfitChartData, useClass: ProfitChartService },
