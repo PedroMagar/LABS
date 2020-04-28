@@ -1,4 +1,5 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component} from '@angular/core';
+import {AmostraComposicao} from '../../@core/data/amostra-composicao';
 
 interface CardSettings {
   title: string;
@@ -11,7 +12,37 @@ interface CardSettings {
   styleUrls: ['./amostra-composicao.component.scss'],
   templateUrl: './amostra-composicao.component.html',
 })
-export class AmostraComposicaoComponent implements OnDestroy {
+export class AmostraComposicaoComponent {
+
+  CompMatriz = ['Nada','TeO2', 'ZnO','PbO', 'GeO2'];
+  
+  CompDopantes = ['Nada','ErO2','YbO2','NdO2','EuO2'];
+
+  CompNPs = ['Nada','AgNO3','AgO2','AuO2','Si100'];
+
+  modelo = new AmostraComposicao (
+    1,
+    'Vidro Teste',
+    '',
+    '',
+    this.CompMatriz[0], 0,
+    this.CompMatriz[0], 0,
+    this.CompMatriz[0], 0,
+    this.CompMatriz[0], 0,
+    this.CompDopantes[0], 0,
+    this.CompDopantes[0], 0,
+    this.CompDopantes[0], 0,
+    this.CompDopantes[0], 0,
+    this.CompNPs[0], 1,
+    this.CompNPs[0], 0,
+    this.CompNPs[0], 0,
+    this.CompNPs[0], 0,
+    );
+
+  dopante = false;  // controle do botão 
+
+  nps = false;    // controle do botão
+
   constructor() { }
 
   ngOnDestroy() {
