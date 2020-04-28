@@ -35,7 +35,7 @@ export class AmostraComposicaoComponent {
     this.CompNPs[0], 0,
     this.CompNPs[0], 0,
     );
-  dopante = false;// controle do botão
-  nps = false;// controle do botão
+  dopante = false; // controle do botão
+  nps = false; // controle do botão
   constructor() { }
 }
