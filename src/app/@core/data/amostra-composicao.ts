@@ -19,7 +19,6 @@ export class AmostraComposicao {
     public NpComp1: string, public ConcenNpComp1: number,
     public NpComp2: string, public ConcenNpComp2: number,
     public NpComp3: string, public ConcenNpComp3: number,
-    public NpComp4: string ,public ConcenNpComp4: number
+    public NpComp4: string, public ConcenNpComp4: number,
   ) {  }
-
 }
