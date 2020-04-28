@@ -21,4 +21,5 @@ export class AmostraComposicao {
     public NpComp3: string, public ConcenNpComp3: number,
     public NpComp4: string, public ConcenNpComp4: number,
   ) {  }
+  
 }
