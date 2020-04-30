@@ -37,7 +37,7 @@ export class AmostraComposicaoComponent {
     this.CompNPs[0], 0,
     );
 
-  dopante_checkbox: boolean = true // controle do botão
+  dopante_checkbox: boolean = true; // controle do botão
   nps = false; // controle do botão
   constructor() { }
 }
