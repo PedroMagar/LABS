@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AmostraComposicao} from '../../@core/data/amostra-composicao';
+import { OnInit, Input } from '@angular/core';
 
 interface CardSettings {
   title: string;
@@ -36,9 +37,7 @@ export class AmostraComposicaoComponent {
     this.CompNPs[0], 0,
     );
 
-    mostrar: boolean = true;
-
-  dopante = false; // controle do botão
+  dopante_checkbox: boolean = true // controle do botão
   nps = false; // controle do botão
   constructor() { }
 }

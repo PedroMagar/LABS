@@ -93,13 +93,23 @@
         
         <div class="validation-checkboxes">
           <label for="imputAdcionar" class="label col-6 col-sm-3">Adicionar:</label>
-          <nb-checkbox>Dopantes</nb-checkbox>
+          <nb-checkbox class ="dopante_checkbox">Dopantes</nb-checkbox>
           <nb-checkbox>NPs</nb-checkbox>
-        </div>
-
-        <!--<p *ngif="mostrar">Só mostrar se estiver verdadeito</p>-->
-        
+        </div>    
       </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Teste de Aba
+      </nb-card-header>
+      <nb-card-body>
+        <p [hidden]="!dopante_checkbox">Só mostrar se estiver verdadeiro</p>
       </nb-card-body>
     </nb-card>
   </div>
