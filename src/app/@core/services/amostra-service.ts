@@ -72,7 +72,7 @@ export class AmostrasService {
 
   /** POST: add a new amostra to the server */
   addAmostra(amostra: Amostra): Observable<Amostra> {
-    return this.http.post<Amostra>(this.amostrasUrl + "/add", amostra, this.httpOptions).pipe(
+    return this.http.post<Amostra>(this.amostrasUrl + '/add', amostra, this.httpOptions).pipe(
       tap((newAmostra: Amostra) => this.log(`added amostra w/ id=${newAmostra.id}`)),
       catchError(this.handleError<Amostra>('addAmostra')),
     );
