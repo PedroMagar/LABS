@@ -16,7 +16,7 @@ export class AmostraPerfilComponent implements OnDestroy {
   constructor(
   ) {}
 
-  amostra = Modelo;// coleta a amostra a ser exibida
+  amostra = Modelo; // coleta a amostra a ser exibida
 
   ngOnDestroy() {
   }
