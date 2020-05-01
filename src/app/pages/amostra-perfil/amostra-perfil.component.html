@@ -1,9 +1,35 @@
 <nb-card>
   <nb-card-header>
-    Perfil da Amostra
+    <h4>{{amostra.nome}}</h4>
+        <div class="subtitle">Informações da Amostra</div>
   </nb-card-header>
       <nb-card-body> 
-Colocar cards resumo dos cards (Composição Quimica); (Processo de Produção); (Caracteristicas Fisicas)
+        <div class="row">
+          <label for="Matriz" class="label col-sm-1 col-3">Matriz:</label>
+          <div class="col-3 col-sm-1">
+            <p>
+              {{amostra.matriz}}
+            </p>
+          </div>
+          <label for="inputDopante" class="label col-sm-1 col-3">Dopantes:</label>
+          <div class="col-3 col-sm-1">
+            <p>
+              {{amostra.dopantes}}
+            </p>
+          </div>
+          <label for="inputDopante" class="label col-sm-1 col-3">Autor:</label>
+          <div class="col-3 col-sm-1">
+            <p>
+              {{amostra.autor}}
+            </p>
+          </div>
+          <label for="inputDopante" class="label col-sm-1 col-3">Local:</label>
+          <div class="col-3 col-sm-1">
+            <p>
+              {{amostra.local}}
+            </p>
+          </div>
+        </div>
       </nb-card-body>
 </nb-card>
 
@@ -19,7 +45,65 @@ Colocar cards resumo dos cards (Composição Quimica); (Processo de Produção);
         </button>
         </a>
       </nb-card-header>
-      <nb-card-body> Colocar cards:</nb-card-body>  
+      <nb-card-body>
+        <label class="col-md-6 label">Componentes da Matriz:</label>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">1º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.matrizcomp_1}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_matrizcomp_1}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">2º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.matrizcomp_2}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_matrizcomp_2}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">3º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.matrizcomp_3}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_matrizcomp_3}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">4º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.matrizcomp_4}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_matrizcomp_4}}
+            </p>
+          </div>
+        </div>
+      </nb-card-body>  
     </nb-card>
   </div>
 
