@@ -68,7 +68,7 @@ export class AmostrasComponent {
   onCreateConfirm(event) {
     event.newData.id = 0;
 
-    if (event.newData.nome == "" || event.newData.matriz == "" || event.newData.dopante == "") {
+    if (event.newData.nome === '' || event.newData.matriz === '' || event.newData.dopante === '') {
       // console.log("Informações obrigatórias se encontram vazias");
       // console.log(event.newData.nome == "");
       // console.log(event.newData.matriz == "");
@@ -88,8 +88,6 @@ export class AmostrasComponent {
 
       return event;
     }
-
-    
   }
 
   onDeleteConfirm(event): void {
