@@ -16,9 +16,10 @@ export class AmostraComposicaoComponent {
 
   CompMatriz = ['Nada', 'TeO2', 'ZnO', 'PbO', 'GeO2' ];
   CompDopantes = ['Nada', 'ErO2', 'YbO2', 'NdO2', 'EuO2' ];
-  CompNPs = ['Nada', 'AgNO3', 'AgO2', 'AuO2', 'Si100' ];  
-  amostra = Modelo;
+  CompNPs = ['Nada', 'AgNO3', 'AgO2', 'AuO2', 'Si100' ];
 
+  amostra = Modelo;
+  
   dopante_checkbox: boolean = false; // controle do botão
   nps = false; // controle do botão
   constructor() { }
