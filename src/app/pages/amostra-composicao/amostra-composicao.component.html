@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        <h4>{{modelo.Nome}}</h4>
+        <h4>{{amostra.Nome}}</h4>
         <div class="subtitle">Composição da Amostra</div>
       </nb-card-header>
       <nb-card-body>
@@ -11,12 +11,12 @@
             <label for="imputMatriz" class="label col-sm-3 col-6">Matriz:</label>
             <div class="col-6 col-sm-3">
               <input type="text" nbInput fullWidth id="Matriz" required 
-              [(ngModel)]="modelo.Matriz" name="Matriz" placeholder="Digitar">
+              [(ngModel)]="amostra.Matriz" name="Matriz" placeholder="Digitar">
             </div>
             <label for="inputDopante" class="label col-sm-3 col-6">Dopantes:</label>
             <div class="col-6 col-sm-3">
               <input type="text" nbInput fullWidth id="Dopantes" required 
-              [(ngModel)]="modelo.Dopantes" name="Dopantes" placeholder="Digitar">
+              [(ngModel)]="amostra.Dopantes" name="Dopantes" placeholder="Digitar">
             </div>
           </div>
           <h5 class="grid-h">Componentes da Matriz:</h5>
@@ -26,7 +26,7 @@
             <label class="col-6 col-sm-3 label">1º Composito da Matriz: </label>
             <div class="col-6 col-sm-3">  
               <nb-select id="MatrizComp1" required
-                [(ngModel)]="modelo.MatrizComp1" name="MatrizComp1">
+                [(ngModel)]="amostra.MatrizComp1" name="MatrizComp1">
                 <nb-option *ngFor="let MatrizComp1 of CompMatriz" [value]="MatrizComp1">
                   {{MatrizComp1}}
                 </nb-option>
@@ -35,7 +35,7 @@
             <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
             <div class="col-6 col-sm-3">
               <input type="number" nbInput fullWidth id="ConcenMatrizComp1" required 
-              [(ngModel)]="modelo.ConcenMatrizComp1" name="ConcenMatrizComp1" placeholder="%">
+              [(ngModel)]="amostra.ConcenMatrizComp1" name="ConcenMatrizComp1" placeholder="%">
             </div>
           </div>
 
@@ -43,7 +43,7 @@
             <label class="col-6 col-sm-3 label">2º Composito da Matriz: </label>
             <div class="col-6 col-sm-3">
               <nb-select id="MatrizComp2" required
-                [(ngModel)]="modelo.MatrizComp2" name="MatrizComp2">
+                [(ngModel)]="amostra.MatrizComp2" name="MatrizComp2">
                 <nb-option *ngFor="let MatrizComp2 of CompMatriz" [value]="MatrizComp2">
                   {{MatrizComp2}}
                 </nb-option>
@@ -52,7 +52,7 @@
             <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
             <div class="col-6 col-sm-3">
               <input type="number" nbInput fullWidth id="ConcenMatrizComp2" required 
-              [(ngModel)]="modelo.ConcenMatrizComp2" name="ConcenMatrizComp2" placeholder="%">
+              [(ngModel)]="amostra.ConcenMatrizComp2" name="ConcenMatrizComp2" placeholder="%">
             </div>
           </div>
           
@@ -60,7 +60,7 @@
             <label class="col-6 col-sm-3 label">3º Composito da Matriz: </label>
             <div class="col-6 col-sm-3">
               <nb-select id="MatrizComp1" required
-                [(ngModel)]="modelo.MatrizComp3" name="MatrizComp3">
+                [(ngModel)]="amostra.MatrizComp3" name="MatrizComp3">
                 <nb-option *ngFor="let MatrizComp3 of CompMatriz" [value]="MatrizComp3">
                   {{MatrizComp3}}
                 </nb-option>
@@ -69,7 +69,7 @@
             <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
             <div class="col-6 col-sm-3">
               <input type="number" nbInput fullWidth id="ConcenMatrizComp3" required 
-              [(ngModel)]="modelo.ConcenMatrizComp3" name="ConcenMatrizComp3" placeholder="%">
+              [(ngModel)]="amostra.ConcenMatrizComp3" name="ConcenMatrizComp3" placeholder="%">
             </div>
           </div>
           
@@ -77,7 +77,7 @@
             <label class="col-6 col-sm-3 label">4º Composito da Matriz: </label>
             <div class="col-6 col-sm-3">
               <nb-select id="MatrizComp1" required
-                [(ngModel)]="modelo.MatrizComp4" name="MatrizComp4">
+                [(ngModel)]="amostra.MatrizComp4" name="MatrizComp4">
                 <nb-option *ngFor="let MatrizComp4 of CompMatriz" [value]="MatrizComp4">
                   {{MatrizComp4}}
                 </nb-option>
@@ -86,7 +86,7 @@
             <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
             <div class="col-6 col-sm-3">
               <input type="number" nbInput fullWidth id="ConcenMatrizComp4" required 
-              [(ngModel)]="modelo.ConcenMatrizComp4" name="ConcenMatrizComp4" placeholder="%">
+              [(ngModel)]="amostra.ConcenMatrizComp4" name="ConcenMatrizComp4" placeholder="%">
             </div>
           </div>
         </ng-container>
@@ -128,7 +128,7 @@
           <label class="col-6 col-sm-3 label">1º Dopante na Matriz: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp1" required
-                [(ngModel)]="modelo.DopanteComp1" name="DopanteComp1">
+                [(ngModel)]="amostra.DopanteComp1" name="DopanteComp1">
                 <nb-option *ngFor="let DopanteComp1 of CompDopantes" [value]="DopanteComp1">
                   {{DopanteComp1}}
                 </nb-option>
@@ -137,7 +137,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenDopanteComp1" required 
-              [(ngModel)]="modelo.ConcenDopanteComp1" name="ConcenDopanteComp1" placeholder="%">
+              [(ngModel)]="amostra.ConcenDopanteComp1" name="ConcenDopanteComp1" placeholder="%">
           </div>
         </div>
         
@@ -145,7 +145,7 @@
           <label class="col-6 col-sm-3 label">2º Dopante na Matriz: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp2" required
-                [(ngModel)]="modelo.DopanteComp2" name="DopanteComp2">
+                [(ngModel)]="amostra.DopanteComp2" name="DopanteComp2">
                 <nb-option *ngFor="let DopanteComp2 of CompDopantes" [value]="DopanteComp2">
                   {{DopanteComp2}}
                 </nb-option>
@@ -154,7 +154,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenDopanteComp2" required 
-              [(ngModel)]="modelo.ConcenDopanteComp2" name="ConcenDopanteComp2" placeholder="%">
+              [(ngModel)]="amostra.ConcenDopanteComp2" name="ConcenDopanteComp2" placeholder="%">
           </div>
         </div>
         
@@ -162,7 +162,7 @@
           <label class="col-6 col-sm-3 label">3º Dopante na Matriz: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp3" required
-                [(ngModel)]="modelo.DopanteComp3" name="DopanteComp3">
+                [(ngModel)]="amostra.DopanteComp3" name="DopanteComp3">
                 <nb-option *ngFor="let DopanteComp3 of CompDopantes" [value]="DopanteComp3">
                   {{DopanteComp3}}
                 </nb-option>
@@ -171,7 +171,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenDopanteComp3" required 
-              [(ngModel)]="modelo.ConcenDopanteComp3" name="ConcenDopanteComp3" placeholder="%">
+              [(ngModel)]="amostra.ConcenDopanteComp3" name="ConcenDopanteComp3" placeholder="%">
           </div>
         </div>
        
@@ -179,7 +179,7 @@
           <label class="col-6 col-sm-3 label">4º Dopante na Matriz: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp4" required
-                [(ngModel)]="modelo.DopanteComp4" name="DopanteComp4">
+                [(ngModel)]="amostra.DopanteComp4" name="DopanteComp4">
                 <nb-option *ngFor="let DopanteComp4 of CompDopantes" [value]="DopanteComp4">
                   {{DopanteComp4}}
                 </nb-option>
@@ -188,7 +188,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenDopanteComp4" required 
-              [(ngModel)]="modelo.ConcenDopanteComp4" name="ConcenDopanteComp4" placeholder="%">
+              [(ngModel)]="amostra.ConcenDopanteComp4" name="ConcenDopanteComp4" placeholder="%">
           </div>
         </div>
       
@@ -211,7 +211,7 @@
           <label class="col-6 col-sm-3 label">1º Precursor de NPs: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp1" required
-                [(ngModel)]="modelo.NpComp1" name="NpComp1">
+                [(ngModel)]="amostra.NpComp1" name="NpComp1">
                 <nb-option *ngFor="let NpComp1 of CompNPs" [value]="NpComp1">
                   {{NpComp1}}
                 </nb-option>
@@ -220,7 +220,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenNpComp1" required 
-              [(ngModel)]="modelo.ConcenNpComp1" name="ConcenNpComp1" placeholder="%">
+              [(ngModel)]="amostra.ConcenNpComp1" name="ConcenNpComp1" placeholder="%">
           </div>
         </div>
         
@@ -228,7 +228,7 @@
           <label class="col-6 col-sm-3 label">2º Precursor de NPs: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp1" required
-                [(ngModel)]="modelo.NpComp2" name="NpComp2">
+                [(ngModel)]="amostra.NpComp2" name="NpComp2">
                 <nb-option *ngFor="let NpComp2 of CompNPs" [value]="NpComp2">
                   {{NpComp2}}
                 </nb-option>
@@ -237,7 +237,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenNpComp2" required 
-              [(ngModel)]="modelo.ConcenNpComp2" name="ConcenNpComp2" placeholder="%">
+              [(ngModel)]="amostra.ConcenNpComp2" name="ConcenNpComp2" placeholder="%">
           </div>
         </div>
         
@@ -245,7 +245,7 @@
           <label class="col-6 col-sm-3 label">3º Precursor de NPs: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp1" required
-                [(ngModel)]="modelo.NpComp3" name="NpComp3">
+                [(ngModel)]="amostra.NpComp3" name="NpComp3">
                 <nb-option *ngFor="let NpComp3 of CompNPs" [value]="NpComp3">
                   {{NpComp3}}
                 </nb-option>
@@ -254,7 +254,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenNpComp3" required 
-              [(ngModel)]="modelo.ConcenNpComp3" name="ConcenNpComp3" placeholder="%">
+              [(ngModel)]="amostra.ConcenNpComp3" name="ConcenNpComp3" placeholder="%">
           </div>
         </div>
         
@@ -262,7 +262,7 @@
           <label class="col-6 col-sm-3 label">4º Precursor de NPs: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="DopanteComp1" required
-                [(ngModel)]="modelo.NpComp4" name="NpComp4">
+                [(ngModel)]="amostra.NpComp4" name="NpComp4">
                 <nb-option *ngFor="let NpComp4 of CompNPs" [value]="NpComp4">
                   {{NpComp4}}
                 </nb-option>
@@ -271,7 +271,7 @@
           <label for="imputConcentração" class="label col-6 col-sm-3">Concentração (%):</label>
           <div class="col-6 col-sm-3">
             <input type="number" nbInput fullWidth id="ConcenNpComp4" required 
-              [(ngModel)]="modelo.ConcenNpComp4" name="ConcenNpComp4" placeholder="%">
+              [(ngModel)]="amostra.ConcenNpComp4" name="ConcenNpComp4" placeholder="%">
           </div>
         </div>
       
