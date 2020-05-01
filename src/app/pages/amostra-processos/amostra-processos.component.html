@@ -2,21 +2,21 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        <h4>{{modelo.Nome}}</h4>
+        <h4>{{modelo.nome}}</h4>
         <div class="subtitle">Processos de Produção</div>
       </nb-card-header>
       <nb-card-body>
         <form>
           <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Matriz:</label>
+            <label for="matriz" class="label col-sm-3 col-6">Matriz:</label>
             <div class="col-6 col-sm-3">
-              <input type="text" nbInput fullWidth id="Matriz" required 
-              [(ngModel)]="modelo.Matriz" name="Matriz" placeholder="Digitar">
+              <input type="text" nbInput fullWidth id="matriz" required 
+              [(ngModel)]="modelo.matriz" name="matriz" placeholder="Digitar">
             </div>
             <label for="inputDopante" class="label col-sm-3 col-6">Dopantes:</label>
             <div class="col-6 col-sm-3">
-              <input type="text" nbInput fullWidth id="Dopantes" required 
-              [(ngModel)]="modelo.Dopantes" name="Dopantes" placeholder="Digitar">
+              <input type="text" nbInput fullWidth id="dopantes" required 
+              [(ngModel)]="modelo.dopantes" name="dopantes" placeholder="Digitar">
             </div>
           </div>           
       </form>
