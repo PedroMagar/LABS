@@ -1,0 +1,256 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        <h4>{{modelo.Nome}}</h4>
+        <div class="subtitle">Processos de Produção</div>
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Matriz:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="Matriz" required 
+              [(ngModel)]="modelo.Matriz" name="Matriz" placeholder="Digitar">
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Dopantes:</label>
+            <div class="col-6 col-sm-3">
+              <input type="text" nbInput fullWidth id="Dopantes" required 
+              [(ngModel)]="modelo.Dopantes" name="Dopantes" placeholder="Digitar">
+            </div>
+          </div>           
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Parâmetros do Processo
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Fusão (ºC):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="ºC">
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Fusão (min):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="min">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Tratamento (ºC):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="ºC">
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Tratamento (min):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="min">
+            </div>
+          </div> 
+          <div class="form-group row">
+            <label class="col-6 col-sm-3 label">Uso de agitação? </label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="1">
+                <nb-option value="1">Não</nb-option>
+                <nb-option value="2">Sim</nb-option>
+              </nb-select> 
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Tipo de agitação:</label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="1">
+                <nb-option value="1">Automatica</nb-option>
+                <nb-option value="2">Manual</nb-option>
+              </nb-select> 
+            </div>
+          </div>      
+        <div class="validation-checkboxes">
+          <label for="imputAdcionar" class="label">Adcional:</label>
+          <nb-checkbox>Necleação</nb-checkbox>
+          <nb-checkbox>Refusão</nb-checkbox>
+          <nb-checkbox>Obs.</nb-checkbox>
+        </div>    
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Caracteristicas do Processo
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="form-group row">
+          <label for="inputDopante" class="label col-sm-3 col-6">Forno de Fusão utilizado:</label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="0">
+                <nb-option value="0">?</nb-option>
+                <nb-option value="1">01</nb-option>
+                <nb-option value="2">02</nb-option>
+                <nb-option value="3">03</nb-option>
+                <nb-option value="4">04</nb-option>
+              </nb-select> 
+            </div> 
+            <label for="imputMatriz" class="label col-sm-3 col-6">Rampa de aquecimento (ºC/min):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="ºC/min">
+            </div> 
+          </div>    
+          <div class="form-group row">
+            <label for="inputDopante" class="label col-sm-3 col-6">Forno de Tratamento utilizado:</label>
+              <div class="col-6 col-sm-3">
+                <nb-select selected="0">
+                  <nb-option value="0">?</nb-option>
+                  <nb-option value="1">01</nb-option>
+                  <nb-option value="2">02</nb-option>
+                  <nb-option value="3">03</nb-option>
+                  <nb-option value="4">04</nb-option>
+                </nb-select> 
+              </div> 
+              <label for="imputMatriz" class="label col-sm-3 col-6">Rampa de aquecimento (ºC/min):</label>
+              <div class="col-6 col-sm-3">
+                <input type="number" nbInput fullWidth placeholder="ºC/min">
+              </div> 
+            </div>  
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Tratamentos para Nucleação
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Tratamento para Nucleação (ºC):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="ºC">
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Nucleação (min):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="min">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputDopante" class="label col-sm-3 col-6">Forno de Tratamento utilizado:</label>
+              <div class="col-6 col-sm-3">
+                <nb-select selected="0">
+                  <nb-option value="0">?</nb-option>
+                  <nb-option value="1">01</nb-option>
+                  <nb-option value="2">02</nb-option>
+                  <nb-option value="3">03</nb-option>
+                  <nb-option value="4">04</nb-option>
+                </nb-select> 
+              </div> 
+              <label for="imputMatriz" class="label col-sm-3 col-6">Rampa de aquecimento (ºC/min):</label>
+              <div class="col-6 col-sm-3">
+                <input type="number" nbInput fullWidth placeholder="ºC/min">
+              </div> 
+            </div>  
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Numero de Ciclos de Tratamento:</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="0">
+            </div>
+            <label for="imputMatriz" class="label col-sm-3 col-6">Tempo toral de Tratamento (horas):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="horas">
+            </div>
+          </div>   
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Parâmetros da Refusão
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Refusão (ºC):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="ºC">
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Refusão (min):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="min">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Tratamento (ºC):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="ºC">
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Tratamento (min):</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="min">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-6 col-sm-3 label">Uso de agitação? </label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="1">
+                <nb-option value="1">Não</nb-option>
+                <nb-option value="2">Sim</nb-option>
+              </nb-select> 
+            </div>
+            <label for="inputDopante" class="label col-sm-3 col-6">Tipo de agitação:</label>
+            <div class="col-6 col-sm-3">
+              <nb-select selected="1">
+                <nb-option value="1">Automatica</nb-option>
+                <nb-option value="2">Manual</nb-option>
+              </nb-select> 
+            </div>
+          </div>    
+          <div class="form-group row">
+            <label for="imputMatriz" class="label col-sm-3 col-6">Numero de Refusões:</label>
+            <div class="col-6 col-sm-3">
+              <input type="number" nbInput fullWidth placeholder="0">
+            </div>
+          </div>   
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Observações Durante o Processo
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <textarea rows="5" nbInput fullWidth shape="round"  
+          placeholder="Escreva aqui suas observações"></textarea>
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="offset-sm-9 col-sm-12">
+    <button type="submit" nbButton status="primary">Atualizar</button>
+  </div>
+</div>
