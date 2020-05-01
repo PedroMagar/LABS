@@ -18,6 +18,7 @@ export class AmostrasComponent {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmCreate: true,
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -58,9 +59,49 @@ export class AmostrasComponent {
 
   source: LocalDataSource = new LocalDataSource();
   amostras: Amostra[] = [];
+  selectedAmostra: Amostra;
 
   constructor(private amostraService: AmostrasService) {
-    this.amostraService.getData()
+    this.loadTableAmostras();
+  }
+
+  onCreateConfirm(event) {
+    event.newData.id = 0;
+
+    if (event.newData.nome == "" || event.newData.matriz == "" || event.newData.dopante == "") {
+      // console.log("Informações obrigatórias se encontram vazias");
+      // console.log(event.newData.nome == "");
+      // console.log(event.newData.matriz == "");
+      // console.log(event.newData.dopante == "");
+    } else {
+      this.selectedAmostra = event.newData;
+      this.amostraService.addAmostra(this.selectedAmostra)
+        .subscribe(
+          res => {
+            // console.log(res.id);
+            this.amostras.push(res);
+            this.source.load(this.amostras);
+            event.newData = res;
+          },
+          err => { },
+        );
+
+      return event;
+    }
+
+    
+  }
+
+  onDeleteConfirm(event): void {
+    if (window.confirm('Tem certeza que deseja apagar a amostra?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+
+  loadTableAmostras() {
+    this.amostraService.getAmostras()
       .pipe(finalize(() => this.source.load(this.amostras)))
       .subscribe(
       res => {
@@ -72,11 +113,5 @@ export class AmostrasComponent {
     );
   }
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('Tem certeza que deseja apagar a amostra?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
-  }
+
 }

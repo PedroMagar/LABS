@@ -21,7 +21,8 @@ export class AmostrasService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-    getData(): Observable<Amostra[]> {
+    /** GET amostra from the server */
+    getAmostras(): Observable<Amostra[]> {
       // console.log("Tentando ler json");
       return this.http.get<Amostra[]>(this.amostrasUrl + '/ler')
         .pipe(
@@ -29,15 +30,6 @@ export class AmostrasService {
           catchError(this.handleError<Amostra[]>('getData', [])),
         );
     }
-
-  /** GET amostra from the server */
-  getAmostras(): Observable<Amostra[]> {
-    return this.http.get<Amostra[]>(this.amostrasUrl + '/ler')
-      .pipe(
-        tap(_ => this.log('fetched amostras')),
-        catchError(this.handleError<Amostra[]>('getAmostras', [])),
-      );
-  }
 
   /** GET amostra by id. Return `undefined` when id not found */
   getAmostraNo404<Data>(id: number): Observable<Amostra> {
@@ -80,7 +72,7 @@ export class AmostrasService {
 
   /** POST: add a new amostra to the server */
   addAmostra(amostra: Amostra): Observable<Amostra> {
-    return this.http.post<Amostra>(this.amostrasUrl, amostra, this.httpOptions).pipe(
+    return this.http.post<Amostra>(this.amostrasUrl + "/add", amostra, this.httpOptions).pipe(
       tap((newAmostra: Amostra) => this.log(`added amostra w/ id=${newAmostra.id}`)),
       catchError(this.handleError<Amostra>('addAmostra')),
     );

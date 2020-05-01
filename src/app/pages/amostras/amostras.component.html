@@ -16,7 +16,7 @@
   <nb-card-body>
     <ul>
     <ng2-smart-table [settings]="settings" [source]="source" 
-      (deleteConfirm)="onDeleteConfirm($event)">
+      (deleteConfirm)="onDeleteConfirm($event)" (createConfirm)="onCreateConfirm($event)">
       <!-- [class.selected]="data === selectedData"
       (click)="onSelect($event)"> -->
     </ng2-smart-table>
