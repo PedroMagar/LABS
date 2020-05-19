@@ -24,6 +24,7 @@ export class AmostrasComponent {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
@@ -78,16 +79,23 @@ export class AmostrasComponent {
       this.amostraService.addAmostra(this.selectedAmostra)
         .subscribe(
           res => {
-            // console.log(res.id);
-            this.amostras.push(res);
-            this.source.load(this.amostras);
             event.newData = res;
+            event.confirm.resolve(event.newData);
           },
           err => { },
         );
-
-      return event;
     }
+  }
+
+  onSaveConfirm(event) {
+    this.selectedAmostra = event.newData;
+    this.amostraService.updateAmostra(this.selectedAmostra)
+      .subscribe(
+        res => {
+          event.confirm.resolve(event.newData);
+        },
+        err => { },
+      );
   }
 
   onDeleteConfirm(event): void {

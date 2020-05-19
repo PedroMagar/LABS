@@ -24,7 +24,7 @@ export class AmostrasService {
     /** GET amostra from the server */
     getAmostras(): Observable<Amostra[]> {
       // console.log("Tentando ler json");
-      return this.http.get<Amostra[]>(this.amostrasUrl + '/ler')
+      return this.http.get<Amostra[]>(this.amostrasUrl + '/read')
         .pipe(
           tap(_ => this.log('fetched amostras')),
           catchError(this.handleError<Amostra[]>('getData', [])),
@@ -91,7 +91,8 @@ export class AmostrasService {
 
   /** PUT: update the amostra on the server */
   updateAmostra(amostra: Amostra): Observable<any> {
-    return this.http.put(this.amostrasUrl, amostra, this.httpOptions).pipe(
+    console.log('Enviando requisição de Edição para Backend');
+    return this.http.put(this.amostrasUrl + '/update/' + amostra.id, amostra, this.httpOptions).pipe(
       tap(_ => this.log(`updated amostra id=${amostra.id}`)),
       catchError(this.handleError<any>('updateAmostra')),
     );
