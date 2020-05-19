@@ -93,7 +93,7 @@
         
         <div class="validation-checkboxes">
           <label for="imputAdcionar" class="label col-6 col-sm-3">Adicionar:</label>
-          <nb-checkbox class ="dopante_checkbox">Dopantes</nb-checkbox>
+          <nb-checkbox ng-model="dopante_checkbox" init="dopante_checkbox=true" >Dopantes</nb-checkbox>
           <nb-checkbox>NPs</nb-checkbox>
         </div>    
       </form>
@@ -109,7 +109,7 @@
         Teste de Aba
       </nb-card-header>
       <nb-card-body>
-        <p [hidden]="!dopante_checkbox">Só mostrar se estiver verdadeiro</p>
+        <p ng-if="dopante_checkbox">Só mostrar se estiver verdadeiro</p>
       </nb-card-body>
     </nb-card>
   </div>
