@@ -6,8 +6,7 @@ import { Modelo } from '../../@core/data/amostra-mock';
   styleUrls: ['./amostra-perfil.component.scss'],
   templateUrl: './amostra-perfil.component.html',
 })
-export class AmostraPerfilComponent implements OnInit  {
-  
+export class AmostraPerfilComponent implements OnInit  {  
   amostra = Modelo; // coleta a amostra a ser exibida
 
   esconder_configurar_matriz: boolean;
@@ -30,18 +29,12 @@ export class AmostraPerfilComponent implements OnInit  {
   padrao = "Nada"; // comparação com os dados salvos
 
   constructor() {
-    // Definição futura de array de elementos 
-    // for (let i = 1; i < 5; i++){
-     // if (this.amostra.matrizcomp_i == this.padrao){this.esconder_matrizcomp_i = true;}
-     // else{this.esconder_matrizcomp_i = false;}
-    // }
-
 // Define se tem dados cadastrados 
     if ((this.amostra.matrizcomp_1 == this.padrao) && 
     (this.amostra.matrizcomp_2 == this.padrao) && 
     (this.amostra.matrizcomp_3 == this.padrao) && 
     (this.amostra.matrizcomp_4 == this.padrao)
-    ) {
+    ){
       this.esconder_configurar_matriz = false;
     }
     else{
@@ -50,52 +43,30 @@ export class AmostraPerfilComponent implements OnInit  {
 // Define  se o campo Matriz está preenchido, se não estiver, esconde 
     if (this.amostra.matrizcomp_1 == this.padrao){this.esconder_matrizcomp_1 = true;}
     else{this.esconder_matrizcomp_1 = false;}
-
     if (this.amostra.matrizcomp_2 == this.padrao){this.esconder_matrizcomp_2 = true;}
     else{this.esconder_matrizcomp_2 = false;}
-
     if (this.amostra.matrizcomp_3 == this.padrao){this.esconder_matrizcomp_3 = true;}
     else{this.esconder_matrizcomp_3 = false;}
-
     if (this.amostra.matrizcomp_4 == this.padrao){this.esconder_matrizcomp_4 = true;}
     else{this.esconder_matrizcomp_4 = false;}
-  
 // Define  se o campo Dopantes está preenchido, se não estiver, esconde
     if (this.amostra.dopantecomp_1 == this.padrao){this.esconder_dopantecomp_1 = true;}
     else{this.esconder_dopantecomp_1 = false;}
-
     if (this.amostra.dopantecomp_2 == this.padrao){this.esconder_dopantecomp_2 = true;}
     else{this.esconder_dopantecomp_2 = false;}
-
     if (this.amostra.dopantecomp_3 == this.padrao){this.esconder_dopantecomp_3 = true;}
     else{this.esconder_dopantecomp_3 = false;}
-
     if (this.amostra.dopantecomp_4 == this.padrao){this.esconder_dopantecomp_4 = true;}
     else{this.esconder_dopantecomp_4 = false;}
-
 // Define  se o campo NPs está preenchido, se não estiver, esconde
     if (this.amostra.npcomp_1 == this.padrao){this.esconder_npcomp_1 = true;}
     else{this.esconder_npcomp_1 = false;}
-
     if (this.amostra.npcomp_2 == this.padrao){this.esconder_npcomp_2 = true;}
     else{this.esconder_npcomp_2 = false;}
-
     if (this.amostra.npcomp_3 == this.padrao){this.esconder_npcomp_3 = true;}
     else{this.esconder_npcomp_3 = false;}
-
     if (this.amostra.npcomp_4 == this.padrao){this.esconder_npcomp_4 = true;}
     else{this.esconder_npcomp_4 = false;}
-
   }
-
-  ngOnInit() {
-  }
-
-  //if (x < y){}
-    //this.esconder_matrizcomp_4 = true;
-  //}
-  //else {
-    //this.esconder_matrizcomp_4 = false;
-  //}
-  
+  ngOnInit() {}
 }
