@@ -91,7 +91,6 @@ export class AmostrasService {
 
   /** PUT: update the amostra on the server */
   updateAmostra(amostra: Amostra): Observable<any> {
-    console.log('Enviando requisição de Edição para Backend');
     return this.http.put(this.amostrasUrl + '/update/' + amostra.id, amostra, this.httpOptions).pipe(
       tap(_ => this.log(`updated amostra id=${amostra.id}`)),
       catchError(this.handleError<any>('updateAmostra')),
