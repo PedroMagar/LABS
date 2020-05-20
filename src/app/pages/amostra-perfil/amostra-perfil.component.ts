@@ -49,7 +49,7 @@ export class AmostraPerfilComponent implements OnInit  {
     } else { this.esconder_dopantecomp_1 = false; }
     if ( this.amostra.dopantecomp_2 === this.padrao ) { this.esconder_dopantecomp_2 = true;
     } else { this.esconder_dopantecomp_2 = false; }
-    if ( this.amostra.dopantecomp_3 === this.padrao ){ this.esconder_dopantecomp_3 = true;
+    if ( this.amostra.dopantecomp_3 === this.padrao ) { this.esconder_dopantecomp_3 = true;
     } else { this.esconder_dopantecomp_3 = false; }
     if ( this.amostra.dopantecomp_4 === this.padrao ) { this.esconder_dopantecomp_4 = true;
     } else { this.esconder_dopantecomp_4 = false; }
