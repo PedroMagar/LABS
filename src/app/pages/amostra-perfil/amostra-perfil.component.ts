@@ -61,7 +61,7 @@ export class AmostraPerfilComponent implements OnInit  {
     if ( this.amostra.npcomp_3 === this.padrao ) { this.esconder_npcomp_3 = true;
     } else { this.esconder_npcomp_3 = false; }
     if ( this.amostra.npcomp_4 === this.padrao ) { this.esconder_npcomp_4 = true;
-    } else {this.esconder_npcomp_4 = false; }
+    } else { this.esconder_npcomp_4 = false; }
   }
   ngOnInit() {}
 }
