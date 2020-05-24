@@ -29,8 +29,7 @@ export class AmostraComposicaoComponent implements OnInit  {
   amostra = Modelo; // carrrega os dados da amostra de Modelo Mock
   dopante_checkbox: boolean = false; // controle do botão
   nps_checkbox: boolean = false; // controle do botão
-  constructor() {
-    
+  constructor() {    
     if (this.amostra.matrizcomp_4 !== 'Nada') {
       this.numeroMatrizes = 4;
     } else if (this.amostra.matrizcomp_3 !== 'Nada') {
@@ -40,8 +39,7 @@ export class AmostraComposicaoComponent implements OnInit  {
     } else {
       this.numeroMatrizes = 1;
     }
-    this.mostrarMatriz();
-    
+    this.mostrarMatriz();   
     if (this.amostra.dopantecomp_4 !== 'Nada') {
       this.numeroDopantes = 4;
     } else if (this.amostra.dopantecomp_3 !== 'Nada') {
@@ -85,48 +83,48 @@ export class AmostraComposicaoComponent implements OnInit  {
   }
 
   onAdicionarMatriz(): void {
-    if (this.numeroMatrizes < 4){
+    if (this.numeroMatrizes < 4) {
       this.numeroMatrizes = this.numeroMatrizes + 1;
       this.mostrarMatriz();
     }
   }
   onRemoverMatriz(): void {
-    if (this.numeroMatrizes > 1){
+    if (this.numeroMatrizes > 1) {
       this.numeroMatrizes = this.numeroMatrizes - 1;
       this.mostrarMatriz();
     }
   }
 
   onAdicionarDopante(): void {
-    if (this.numeroDopantes < 4){
+    if (this.numeroDopantes < 4) {
       this.numeroDopantes = this.numeroDopantes + 1;
       this.mostrarDopantes();
     }
   }
 
   onRemoverDopante(): void {
-    if (this.numeroDopantes > 1){
+    if (this.numeroDopantes > 1) {
       this.numeroDopantes = this.numeroDopantes - 1;
       this.mostrarDopantes();
     }
   }
 
   onAdicionarNPs(): void {
-    if (this.numeroNPs < 4){
+    if (this.numeroNPs < 4) {
       this.numeroNPs = this.numeroNPs + 1;
       this.mostrarNPs();
     }
   }
 
   onRemoverNPs(): void {
-    if (this.numeroNPs > 1){
+    if (this.numeroNPs > 1) {
       this.numeroNPs = this.numeroNPs - 1;
       this.mostrarNPs();
     }
   }
 
   mostrarMatriz(): void {
-    switch (this.numeroMatrizes){
+    switch (this.numeroMatrizes) {
       case 1:
         this.esconder_matriz_2 = true;
         this.esconder_matriz_3 = true;
@@ -151,7 +149,7 @@ export class AmostraComposicaoComponent implements OnInit  {
   }
 
   mostrarDopantes(): void {
-    switch (this.numeroDopantes){
+    switch (this.numeroDopantes) {
       case 1:
         this.esconder_dopante_2 = true;
         this.esconder_dopante_3 = true;
@@ -176,7 +174,7 @@ export class AmostraComposicaoComponent implements OnInit  {
   }
   
   mostrarNPs(): void {
-    switch (this.numeroNPs){
+    switch (this.numeroNPs) {
       case 1:
         this.esconder_nps_2 = true;
         this.esconder_nps_3 = true;
