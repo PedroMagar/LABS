@@ -97,14 +97,15 @@
         
         <div class="validation-checkboxes">
           <label for="imputAdcionar" class="label col-6 col-sm-3">Adicionar:</label>
-          <nb-checkbox [(ngModel)]="dopante_checkbox" ndata-md-icheck (click)="checkedDopante()">Dopantes</nb-checkbox>
-          <nb-checkbox [(ngModel)]="nps_checkbox" ndata-md-icheck (click)="checkedNPs()">NPs</nb-checkbox>
+          <nb-checkbox [(ngModel)]="dopante_checkbox" (chage)="checkedDopante()" [(checked)]="dopante_checkbox">Dopantes</nb-checkbox>
+          <nb-checkbox [(ngModel)]="nps_checkbox" (chage)="checkedNPs()" [(checked)]="nps_checkbox">NPs</nb-checkbox>
         </div>    
       </form>
       </nb-card-body>
     </nb-card>
   </div>
 </div>
+
 
 <div class="row" [hidden]="!dopante_checkbox">
   <div class="col-md-12">

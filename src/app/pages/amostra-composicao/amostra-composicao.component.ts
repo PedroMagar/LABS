@@ -27,8 +27,8 @@ export class AmostraComposicaoComponent implements OnInit  {
   esconder_nps_4: boolean;
 
   amostra = Modelo; // carrrega os dados da amostra de Modelo Mock
-  dopante_checkbox: boolean = false; // controle do botão
-  nps_checkbox: boolean = false; // controle do botão
+  dopante_checkbox: boolean; // controle do botão
+  nps_checkbox: boolean; // controle do botão
   constructor() {
     if (this.amostra.matrizcomp_4 !== 'Nada') {
       this.numeroMatrizes = 4;
@@ -42,23 +42,35 @@ export class AmostraComposicaoComponent implements OnInit  {
     this.mostrarMatriz();
     if (this.amostra.dopantecomp_4 !== 'Nada') {
       this.numeroDopantes = 4;
+      this.dopante_checkbox = true;
     } else if (this.amostra.dopantecomp_3 !== 'Nada') {
       this.numeroDopantes = 3;
+      this.dopante_checkbox = true;
     } else if (this.amostra.dopantecomp_2 !== 'Nada') {
       this.numeroDopantes = 2;
-    } else {
+      this.dopante_checkbox = true;
+    } else if (this.amostra.dopantecomp_1 !== 'Nada') {
       this.numeroDopantes = 1;
+      this.dopante_checkbox = true;
+    } else {
+      this.dopante_checkbox = false;
     }
     this.mostrarDopantes();
 
     if (this.amostra.npcomp_4 !== 'Nada') {
       this.numeroNPs = 4;
+      this.nps_checkbox = true;
     } else if (this.amostra.npcomp_3 !== 'Nada') {
       this.numeroNPs = 3;
+      this.nps_checkbox = true;
     } else if (this.amostra.npcomp_2 !== 'Nada') {
       this.numeroNPs = 2;
-    } else {
+      this.nps_checkbox = true;
+    } else if (this.amostra.npcomp_1 !== 'Nada') {
       this.numeroNPs = 1;
+      this.nps_checkbox = true;
+    } else {
+      this.nps_checkbox = false;
     }
     this.mostrarNPs();
   }
