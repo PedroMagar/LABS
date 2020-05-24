@@ -106,7 +106,7 @@
         </div>
 <!-- Dopantes -->
       <div [hidden]="!esconder_configurar_matriz">
-        <label class="col-md-6 label">Componentes Dopantes:</label>
+        <label class="col-md-6 label" [hidden]="esconder_dopantecomp_1">Componentes Dopantes:</label>
         <div class="form-group row" [hidden]="esconder_dopantecomp_1">
           <label class="col-3 col-sm-3 label">1º: </label>
           <div class="col-3 col-sm-3">
@@ -166,7 +166,7 @@
       </div>
 <!-- NPs -->
       <div [hidden]="!esconder_configurar_matriz">
-        <label class="col-md-6 label">Precursores de Nanoparticulas:</label>
+        <label class="col-md-6 label" [hidden]="esconder_npcomp_1">Precursores de Nanoparticulas:</label>
         <div class="form-group row" [hidden]="esconder_npcomp_1">
           <label class="col-3 col-sm-3 label">1º: </label>
           <div class="col-3 col-sm-3">
