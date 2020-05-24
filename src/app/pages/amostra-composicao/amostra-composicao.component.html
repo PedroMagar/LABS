@@ -19,11 +19,15 @@
               [(ngModel)]="amostra.dopantes" name="dopantes" placeholder="Digitar">
             </div>
           </div>
-          <h5 class="grid-h">Componentes da Matriz:</h5>
+          <h5 class="grid-h">Componentes da Matriz 
+            <button nbButton status="primary" (click)="onAdicionarMatriz()">+</button>
+            <button nbButton status="danger" (click)="onRemoverMatriz()">-</button>
+            {{numeroMatrizes}}
+          </h5>
         <ng-container>
-          
+
           <div class="form-group row">
-            <label class="col-6 col-sm-3 label">1º Composito da Matriz: </label>
+            <label class="col-6 col-sm-3 label">1º Componente da Matriz: </label>
             <div class="col-6 col-sm-3">  
               <nb-select id="matrizcomp_1" required
                 [(ngModel)]="amostra.matrizcomp_1" name="matrizcomp_1">
@@ -39,8 +43,8 @@
             </div>
           </div>
 
-          <div class="form-group row">
-            <label class="col-6 col-sm-3 label">2º Composito da Matriz: </label>
+          <div class="form-group row" [hidden]="esconder_matriz_2">
+            <label class="col-6 col-sm-3 label">2º Componente da Matriz: </label>
             <div class="col-6 col-sm-3">
               <nb-select id="matrizcomp_2" required
                 [(ngModel)]="amostra.matrizcomp_2" name="matrizcomp_2">
@@ -56,8 +60,8 @@
             </div>
           </div>
           
-          <div class="form-group row">
-            <label class="col-6 col-sm-3 label">3º Composito da Matriz: </label>
+          <div class="form-group row" [hidden]="esconder_matriz_3">
+            <label class="col-6 col-sm-3 label">3º Componente da Matriz: </label>
             <div class="col-6 col-sm-3">
               <nb-select id="matrizcomp_3" required
                 [(ngModel)]="amostra.matrizcomp_3" name="matrizcomp_3">
@@ -73,8 +77,8 @@
             </div>
           </div>
           
-          <div class="form-group row">
-            <label class="col-6 col-sm-3 label">4º Composito da Matriz: </label>
+          <div class="form-group row" [hidden]="esconder_matriz_4">
+            <label class="col-6 col-sm-3 label">4º Componente da Matriz: </label>
             <div class="col-6 col-sm-3">
               <nb-select id="matrizcomp_4" required
                 [(ngModel)]="amostra.matrizcomp_4" name="matrizcomp_4">
@@ -93,8 +97,8 @@
         
         <div class="validation-checkboxes">
           <label for="imputAdcionar" class="label col-6 col-sm-3">Adicionar:</label>
-          <nb-checkbox ng-model="dopante_checkbox" init="dopante_checkbox=true" >Dopantes</nb-checkbox>
-          <nb-checkbox>NPs</nb-checkbox>
+          <nb-checkbox [(ngModel)]="dopante_checkbox" ndata-md-icheck (click)="checkedDopante()">Dopantes</nb-checkbox>
+          <nb-checkbox [(ngModel)]="nps_checkbox" ndata-md-icheck (click)="checkedNPs()">NPs</nb-checkbox>
         </div>    
       </form>
       </nb-card-body>
@@ -102,24 +106,15 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" [hidden]="!dopante_checkbox">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        Teste de Aba
-      </nb-card-header>
-      <nb-card-body>
-        <p ng-if="dopante_checkbox">Só mostrar se estiver verdadeiro</p>
-      </nb-card-body>
-    </nb-card>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-header>
-        <h6>Componentes Dopantes</h6>
+        <h6>Componentes Dopantes
+          <button nbButton status="primary" (click)="onAdicionarDopante()">+</button>
+          <button nbButton status="danger" (click)="onRemoverDopante()">-</button>
+          {{numeroDopantes}}
+        </h6>
       </nb-card-header>
       <nb-card-body>
         <form>
@@ -141,7 +136,7 @@
           </div>
         </div>
         
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_dopante_2">
           <label class="col-6 col-sm-3 label">2º Dopante na Matriz: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="dopantecomp_2" required
@@ -158,7 +153,7 @@
           </div>
         </div>
         
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_dopante_3">
           <label class="col-6 col-sm-3 label">3º Dopante na Matriz: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="dopantecomp_3" required
@@ -175,7 +170,7 @@
           </div>
         </div>
        
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_dopante_4">
           <label class="col-6 col-sm-3 label">4º Dopante na Matriz: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="dopantecomp_4" required
@@ -198,11 +193,15 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" [hidden]="!nps_checkbox">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        <h6>Precursores de Nanoparticulas</h6>
+        <h6>Precursores de Nanoparticulas
+          <button nbButton status="primary" (click)="onAdicionarNPs()">+</button>
+          <button nbButton status="danger" (click)="onRemoverNPs()">-</button>
+          {{numeroNPs}}
+        </h6>
       </nb-card-header>
       <nb-card-body>
         <form>
@@ -224,7 +223,7 @@
           </div>
         </div>
         
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_nps_2">
           <label class="col-6 col-sm-3 label">2º Precursor de NPs: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="npcomp_2" required
@@ -241,7 +240,7 @@
           </div>
         </div>
         
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_nps_3">
           <label class="col-6 col-sm-3 label">3º Precursor de NPs: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="npcomp_3" required
@@ -258,7 +257,7 @@
           </div>
         </div>
         
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_nps_4">
           <label class="col-6 col-sm-3 label">4º Precursor de NPs: </label>
           <div class="col-6 col-sm-3">
             <nb-select id="npcomp_4" required

@@ -14,7 +14,7 @@ export const Modelo: AmostraClasse = {
     matrizcomp_4: 'Nada', concen_matrizcomp_4: 0,
 
     dopantecomp_1: 'EuO2', concen_dopantecomp_1: 2,
-    dopantecomp_2: 'EuO2', concen_dopantecomp_2: 1,
+    dopantecomp_2: 'TbO2', concen_dopantecomp_2: 1,
     dopantecomp_3: 'Nada', concen_dopantecomp_3: 0,
     dopantecomp_4: 'Nada', concen_dopantecomp_4: 0,
 

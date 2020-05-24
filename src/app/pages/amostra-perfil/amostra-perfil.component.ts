@@ -9,7 +9,7 @@ import { Modelo } from '../../@core/data/amostra-mock';
 export class AmostraPerfilComponent implements OnInit  {
   amostra = Modelo; // coleta a amostra a ser exibida
 
-  esconder_configurar_matriz: boolean;
+  esconder_configurar_matriz: boolean; // para controle quando não possui dados gravados
 
   esconder_matrizcomp_1: boolean; // esconde se for nada Matriz
   esconder_matrizcomp_2: boolean; // esconde se for nada
