@@ -29,7 +29,7 @@ export class AmostraComposicaoComponent implements OnInit  {
   amostra = Modelo; // carrrega os dados da amostra de Modelo Mock
   dopante_checkbox: boolean = false; // controle do botão
   nps_checkbox: boolean = false; // controle do botão
-  constructor() {    
+  constructor() {
     if (this.amostra.matrizcomp_4 !== 'Nada') {
       this.numeroMatrizes = 4;
     } else if (this.amostra.matrizcomp_3 !== 'Nada') {
@@ -39,7 +39,7 @@ export class AmostraComposicaoComponent implements OnInit  {
     } else {
       this.numeroMatrizes = 1;
     }
-    this.mostrarMatriz();   
+    this.mostrarMatriz();
     if (this.amostra.dopantecomp_4 !== 'Nada') {
       this.numeroDopantes = 4;
     } else if (this.amostra.dopantecomp_3 !== 'Nada') {
@@ -74,7 +74,7 @@ export class AmostraComposicaoComponent implements OnInit  {
     }
   }
 
-  checkedNPs(): void{
+  checkedNPs(): void {
     if (this.nps_checkbox === false) {
       this.nps_checkbox = true;
     } else {
@@ -172,7 +172,7 @@ export class AmostraComposicaoComponent implements OnInit  {
         break;
     }
   }
-  
+
   mostrarNPs(): void {
     switch (this.numeroNPs) {
       case 1:
