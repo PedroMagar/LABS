@@ -47,7 +47,8 @@
       </nb-card-header>
       <nb-card-body>
         <label class="col-md-6 label">Componentes da Matriz:</label>
-        <div class="form-group row">
+        <div [hidden]="esconder_configurar_matriz">Sem informação Cadastradas</div>
+        <div class="form-group row" [hidden]="esconder_matrizcomp_1">
           <label class="col-3 col-sm-3 label">1º: </label>
           <div class="col-3 col-sm-3">
             <p>
@@ -61,7 +62,7 @@
             </p>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_matrizcomp_2">
           <label class="col-3 col-sm-3 label">2º: </label>
           <div class="col-3 col-sm-3">
             <p>
@@ -75,7 +76,7 @@
             </p>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_matrizcomp_3">
           <label class="col-3 col-sm-3 label">3º: </label>
           <div class="col-3 col-sm-3">
             <p>
@@ -89,7 +90,7 @@
             </p>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_matrizcomp_4">
           <label class="col-3 col-sm-3 label">4º: </label>
           <div class="col-3 col-sm-3">
             <p>
@@ -103,6 +104,127 @@
             </p>
           </div>
         </div>
+<!-- Dopantes -->
+      <div [hidden]="!esconder_configurar_matriz">
+        <label class="col-md-6 label" [hidden]="esconder_dopantecomp_1">Componentes Dopantes:</label>
+        <div class="form-group row" [hidden]="esconder_dopantecomp_1">
+          <label class="col-3 col-sm-3 label">1º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.dopantecomp_1}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_dopantecomp_1}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row" [hidden]="esconder_dopantecomp_2">
+          <label class="col-3 col-sm-3 label">2º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.dopantecomp_2}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_dopantecomp_2}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row" [hidden]="esconder_dopantecomp_3">
+          <label class="col-3 col-sm-3 label">3º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.dopantecomp_3}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_dopantecomp_3}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row" [hidden]="esconder_dopantecomp_4">
+          <label class="col-3 col-sm-3 label">4º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.dopantecomp_4}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_dopantecomp_4}}
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- NPs -->
+      <div [hidden]="!esconder_configurar_matriz">
+        <label class="col-md-6 label" [hidden]="esconder_npcomp_1">Precursores de Nanoparticulas:</label>
+        <div class="form-group row" [hidden]="esconder_npcomp_1">
+          <label class="col-3 col-sm-3 label">1º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.npcomp_1}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_npcomp_1}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row" [hidden]="esconder_npcomp_2">
+          <label class="col-3 col-sm-3 label">2º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.npcomp_2}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_npcomp_2}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row" [hidden]="esconder_npcomp_3">
+          <label class="col-3 col-sm-3 label">3º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.npcomp_3}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_npcomp_3}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row" [hidden]="esconder_npcomp_4">
+          <label class="col-3 col-sm-3 label">4º: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.npcomp_4}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">(%):</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.concen_npcomp_4}}
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Fim do card -->
       </nb-card-body>  
     </nb-card>
   </div>
