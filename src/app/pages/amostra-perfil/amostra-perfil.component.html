@@ -240,7 +240,96 @@
           </button>
           </a>
       </nb-card-header>
-      <nb-card-body> Colocar cards:</nb-card-body>
+      <nb-card-body>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">Fusão: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.fusao_temperatura}}°C / {{amostra.fusao_tempo}}min
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">Tratamento:</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.trat_temperatura}}°C / {{amostra.trat_tempo}}min
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">OBS:</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.fusao_forno}} a {{amostra.fusao_forno_rampa}}/min
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3"> </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.trat_forno}} a {{amostra.trat_forno_rampa}}/min
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">Agitação:</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.agita_tipo}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">Nucleação / Recozimento: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.nucle_ciclos}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">Recozimento:</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.nucle_temperatura}}°C / {{amostra.nucle_tempo}}min
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">Numero de ciclos: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.nucle_ciclos}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">obs:</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.nucle_forno}} a {{amostra.nucle_forno_rampa}}/min
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">Amostra com: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.nucle_tempo}} min
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">Refundida:</label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.refusao_numero}}
+            </p>
+          </div>
+          <label class="label col-3 col-sm-3">Numero de vezes: </label>
+          <div class="col-3 col-sm-3">
+            <p>
+              {{amostra.refusao_numero}}
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-3 col-sm-3 label">Obdervações:</label>
+          {{amostra.processos_obs}}
+        </div>
+      </nb-card-body>
     </nb-card>
   </div>
 
