@@ -81,8 +81,7 @@ export class AmostrasService {
   /** DELETE: delete the amostra from the server */
   deleteAmostra(amostra: Amostra | number): Observable<Amostra> {
     const id = typeof amostra === 'number' ? amostra : amostra.id;
-    const url = `${this.amostrasUrl}/${id}`;
-
+    const url = `${this.amostrasUrl}/delete/${id}`;
     return this.http.delete<Amostra>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted amostra id=${id}`)),
       catchError(this.handleError<Amostra>('deleteAmostra')),

@@ -74,6 +74,7 @@ export class AmostrasComponent {
       // console.log(event.newData.nome == "");
       // console.log(event.newData.matriz == "");
       // console.log(event.newData.dopante == "");
+        event.confirm.reject();
     } else {
       this.selectedAmostra = event.newData;
       this.amostraService.addAmostra(this.selectedAmostra)
@@ -99,8 +100,13 @@ export class AmostrasComponent {
   }
 
   onDeleteConfirm(event): void {
+    this.selectedAmostra = event.data;
     if (window.confirm('Tem certeza que deseja apagar a amostra?')) {
-      event.confirm.resolve();
+      this.amostraService.deleteAmostra(this.selectedAmostra.id)
+          .subscribe(
+            res => { event.confirm.resolve(); },
+            err => { event.confirm.reject(); },
+          );
     } else {
       event.confirm.reject();
     }
