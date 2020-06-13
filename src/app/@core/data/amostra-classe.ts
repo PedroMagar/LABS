@@ -22,6 +22,21 @@ export class AmostraClasse {
     public npcomp_2: string, public concen_npcomp_2: number,
     public npcomp_3: string, public concen_npcomp_3: number,
     public npcomp_4: string, public concen_npcomp_4: number,
+// Elementos do processo de produção
+    public fusao_temperatura: number, public fusao_tempo: number,
+    public trat_temperatura: number, public trat_tempo: number,
+    public fusao_forno: string, public fusao_forno_rampa: number,
+    public trat_forno: string, public trat_forno_rampa: number,
+    public agita_tipo: string, public agita_texto: string,
+    public nucle_temperatura: number, public nucle_tempo: number,
+    public nucle_forno: string, public nucle_forno_rampa: number,
+    public nucle_ciclos: number, public processos_obs: string,
+    public refusao_fusao_temperatura: number, public refusao_fusao_tempo: number,
+    public refusao_trat_temperatura: number, public refusao_trat_tempo: number,
+    public refusao_forno_fusao: string, public refusao_forno_trat: string,
+    public refusao_numero: number, public refusao_agita: string,
+    public refusao_obs: string,
+    
   ) {  }
 
 }

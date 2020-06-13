@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        <h4>{{modelo.nome}}</h4>
+        <h4>{{amostra.nome}}</h4>
         <div class="subtitle">Processos de Produção</div>
       </nb-card-header>
       <nb-card-body>
@@ -11,12 +11,12 @@
             <label for="matriz" class="label col-sm-3 col-6">Matriz:</label>
             <div class="col-6 col-sm-3">
               <input type="text" nbInput fullWidth id="matriz" required 
-              [(ngModel)]="modelo.matriz" name="matriz" placeholder="Digitar">
+              [(ngModel)]="amostra.matriz" name="matriz" placeholder="Digitar">
             </div>
             <label for="inputDopante" class="label col-sm-3 col-6">Dopantes:</label>
             <div class="col-6 col-sm-3">
               <input type="text" nbInput fullWidth id="dopantes" required 
-              [(ngModel)]="modelo.dopantes" name="dopantes" placeholder="Digitar">
+              [(ngModel)]="amostra.dopantes" name="dopantes" placeholder="Digitar">
             </div>
           </div>           
       </form>
@@ -34,46 +34,36 @@
       <nb-card-body>
         <form>
           <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Fusão (ºC):</label>
+            <label for="imputMatriz" class="label col-sm-3 col-6">Temperatura de Fusão (ºC):</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="ºC">
+              <input type="number" nbInput fullWidth id="fusao_temperatura" required 
+              [(ngModel)]="amostra.fusao_temperatura" name="fusao_temperatura" placeholder="ºC">
             </div>
             <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Fusão (min):</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="min">
+              <input type="number" nbInput fullWidth id="fusao_tempo" required 
+              [(ngModel)]="amostra.fusao_tempo" name="fusao_tempo" placeholder="min">
             </div>
           </div>
           <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Tratamento (ºC):</label>
+            <label for="imputMatriz" class="label col-sm-3 col-6">Temperatura de Tratamento (ºC):</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="ºC">
+              <input type="number" nbInput fullWidth id="trat_temperatura" required 
+              [(ngModel)]="amostra.trat_temperatura" name="trat_temperatura" placeholder="ºC">
             </div>
             <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Tratamento (min):</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="min">
+              <input type="number" nbInput fullWidth id="trat_tempo" required 
+              [(ngModel)]="amostra.trat_tempo" name="trat_tempo" placeholder="min">
             </div>
-          </div> 
-          <div class="form-group row">
-            <label class="col-6 col-sm-3 label">Uso de agitação? </label>
-            <div class="col-6 col-sm-3">
-              <nb-select selected="1">
-                <nb-option value="1">Não</nb-option>
-                <nb-option value="2">Sim</nb-option>
-              </nb-select> 
-            </div>
-            <label for="inputDopante" class="label col-sm-3 col-6">Tipo de agitação:</label>
-            <div class="col-6 col-sm-3">
-              <nb-select selected="1">
-                <nb-option value="1">Automatica</nb-option>
-                <nb-option value="2">Manual</nb-option>
-              </nb-select> 
-            </div>
-          </div>      
+          </div>    
         <div class="validation-checkboxes">
           <label for="imputAdcionar" class="label">Adcional:</label>
-          <nb-checkbox>Necleação</nb-checkbox>
-          <nb-checkbox>Refusão</nb-checkbox>
-          <nb-checkbox>Obs.</nb-checkbox>
+          <nb-checkbox [(ngModel)]="fornos_checkbox" (chage)="checkedFornos()" [(checked)]="fornos_checkbox">Fornos</nb-checkbox>
+          <nb-checkbox [(ngModel)]="agitacao_checkbox" (chage)="checkedAgita()" [(checked)]="agitacao_checkbox">Agitação</nb-checkbox>
+          <nb-checkbox [(ngModel)]="nucleacao_checkbox" (chage)="checkedNucleacao()" [(checked)]="nucleacao_checkbox">Necleação</nb-checkbox>
+          <nb-checkbox [(ngModel)]="refusao_checkbox" (chage)="checkedRefusao()" [(checked)]="refusao_checkbox">Refusão</nb-checkbox>
+          <nb-checkbox [(ngModel)]="obs_checkbox" (chage)="checkedOBS()" [(checked)]="obs_checkbox">Obs.</nb-checkbox>
         </div>    
       </form>
       </nb-card-body>
@@ -81,44 +71,72 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" [hidden]="!agitacao_checkbox">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        Caracteristicas do Processo
+        Parametros de Agitação
+      </nb-card-header>
+      <nb-card-body>
+        <div class="form-group row">
+        <label for="inputDopante" class="label col-sm-3 col-6">Tipo de agitação:</label>
+            <div class="col-6 col-sm-3">
+              <nb-select id="agita_tipo" required
+                [(ngModel)]="amostra.agita_tipo" name="agita_tipo">
+                <nb-option *ngFor="let agita_tipo of lista_agitacao" [value]="agita_tipo">
+                  {{agita_tipo}}
+                </nb-option>
+             </nb-select>
+            </div>
+          </div>
+        <label for="inputDopante" class="label col-sm-3 col-6">Sobre a agitação:</label>
+        <form>
+          <textarea rows="1" nbInput fullWidth shape="round" nbInput fullWidth id="agita_texto" required 
+          [(ngModel)]="amostra.agita_texto" name="agita_texto" placeholder="Escreva aqui suas observações"></textarea>
+      </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row" [hidden]="!fornos_checkbox">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Parâmetros dos Fornos
       </nb-card-header>
       <nb-card-body>
         <form>
           <div class="form-group row">
-          <label for="inputDopante" class="label col-sm-3 col-6">Forno de Fusão utilizado:</label>
+          <label for="inputForno" class="label col-sm-3 col-6">Forno de Fusão:</label>
             <div class="col-6 col-sm-3">
-              <nb-select selected="0">
-                <nb-option value="0">?</nb-option>
-                <nb-option value="1">01</nb-option>
-                <nb-option value="2">02</nb-option>
-                <nb-option value="3">03</nb-option>
-                <nb-option value="4">04</nb-option>
-              </nb-select> 
+              <nb-select id="fusao_forno" required
+                [(ngModel)]="amostra.fusao_forno" name="fusao_forno">
+                <nb-option *ngFor="let fusao_forno of lista_fornos" [value]="fusao_forno">
+                  {{fusao_forno}}
+                </nb-option>
+             </nb-select>
             </div> 
             <label for="imputMatriz" class="label col-sm-3 col-6">Rampa de aquecimento (ºC/min):</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="ºC/min">
+              <input type="number" nbInput fullWidth id="fusao_forno_rampa" required 
+              [(ngModel)]="amostra.fusao_forno_rampa" name="fusao_forno_rampa" placeholder="ºC/min">
             </div> 
           </div>    
           <div class="form-group row">
-            <label for="inputDopante" class="label col-sm-3 col-6">Forno de Tratamento utilizado:</label>
+            <label for="inputDopante" class="label col-sm-3 col-6">Forno de Tratamento:</label>
               <div class="col-6 col-sm-3">
-                <nb-select selected="0">
-                  <nb-option value="0">?</nb-option>
-                  <nb-option value="1">01</nb-option>
-                  <nb-option value="2">02</nb-option>
-                  <nb-option value="3">03</nb-option>
-                  <nb-option value="4">04</nb-option>
-                </nb-select> 
+                <nb-select id="trat_forno" required
+                [(ngModel)]="amostra.trat_forno" name="trat_forno">
+                <nb-option *ngFor="let trat_forno of lista_fornos" [value]="trat_forno">
+                  {{trat_forno}}
+                </nb-option>
+                </nb-select>
               </div> 
               <label for="imputMatriz" class="label col-sm-3 col-6">Rampa de aquecimento (ºC/min):</label>
               <div class="col-6 col-sm-3">
-                <input type="number" nbInput fullWidth placeholder="ºC/min">
+                <input type="number" nbInput fullWidth id="trat_forno_rampa" required 
+              [(ngModel)]="amostra.trat_forno_rampa" name="trat_forno_rampa" placeholder="ºC/min">
               </div> 
             </div>  
         </form>
@@ -127,7 +145,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" [hidden]="!nucleacao_checkbox">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
@@ -136,39 +154,42 @@
       <nb-card-body>
         <form>
           <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Tratamento para Nucleação (ºC):</label>
+            <label for="imputMatriz" class="label col-sm-3 col-6">Temperatura de Nucleação (ºC):</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="ºC">
+              <input type="number" nbInput fullWidth id="nucle_temperatura" required
+              [(ngModel)]="amostra.nucle_temperatura" name="nucle_temperatura" placeholder="ºC">
             </div>
             <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Nucleação (min):</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="min">
+              <input type="number" nbInput fullWidth id="nucle_tempo" required
+              [(ngModel)]="amostra.nucle_tempo" name="nucle_tempo" placeholder="min">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputDopante" class="label col-sm-3 col-6">Forno de Tratamento utilizado:</label>
+            <label for="inputDopante" class="label col-sm-3 col-6">Forno de Nucleação:</label>
               <div class="col-6 col-sm-3">
-                <nb-select selected="0">
-                  <nb-option value="0">?</nb-option>
-                  <nb-option value="1">01</nb-option>
-                  <nb-option value="2">02</nb-option>
-                  <nb-option value="3">03</nb-option>
-                  <nb-option value="4">04</nb-option>
+                <nb-select id="trat_forno" required
+                [(ngModel)]="amostra.nucle_forno" name="nucle_forno">
+                  <nb-option *ngFor="let nucle_forno of lista_fornos" [value]="nucle_forno">
+                    {{nucle_forno}}
+                  </nb-option>
                 </nb-select> 
               </div> 
               <label for="imputMatriz" class="label col-sm-3 col-6">Rampa de aquecimento (ºC/min):</label>
               <div class="col-6 col-sm-3">
-                <input type="number" nbInput fullWidth placeholder="ºC/min">
+                <input type="number" nbInput fullWidth id="nucle_forno_rampa" required
+              [(ngModel)]="amostra.nucle_forno_rampa" name="nucle_forno_rampa" placeholder="ºC/min">
               </div> 
-            </div>  
+          </div>  
           <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Numero de Ciclos de Tratamento:</label>
+            <label for="imputMatriz" class="label col-sm-3 col-6">Numero de Ciclos:</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="0">
+              <input type="number" nbInput fullWidth id="nucle_ciclos" required
+              [(ngModel)]="amostra.nucle_ciclos" name="nucle_ciclos" placeholder="0">
             </div>
-            <label for="imputMatriz" class="label col-sm-3 col-6">Tempo toral de Tratamento (horas):</label>
+            <label for="imputMatriz" class="label col-sm-3 col-6">Amostra com:</label>
             <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="horas">
+              {{nucle_tempo_total}} Horas de tratamento
             </div>
           </div>   
       </form>
@@ -177,63 +198,88 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" [hidden]="!refusao_checkbox">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
         Parâmetros da Refusão
       </nb-card-header>
       <nb-card-body>
-        <form>
-          <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Refusão (ºC):</label>
-            <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="ºC">
-            </div>
-            <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Refusão (min):</label>
-            <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="min">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Forno de Tratamento (ºC):</label>
-            <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="ºC">
-            </div>
-            <label for="inputDopante" class="label col-sm-3 col-6">Tempo de Tratamento (min):</label>
-            <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="min">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-6 col-sm-3 label">Uso de agitação? </label>
-            <div class="col-6 col-sm-3">
-              <nb-select selected="1">
-                <nb-option value="1">Não</nb-option>
-                <nb-option value="2">Sim</nb-option>
-              </nb-select> 
-            </div>
-            <label for="inputDopante" class="label col-sm-3 col-6">Tipo de agitação:</label>
-            <div class="col-6 col-sm-3">
-              <nb-select selected="1">
-                <nb-option value="1">Automatica</nb-option>
-                <nb-option value="2">Manual</nb-option>
-              </nb-select> 
-            </div>
-          </div>    
-          <div class="form-group row">
-            <label for="imputMatriz" class="label col-sm-3 col-6">Numero de Refusões:</label>
-            <div class="col-6 col-sm-3">
-              <input type="number" nbInput fullWidth placeholder="0">
-            </div>
-          </div>   
+      <form>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-6">Temperatura de Refusão (ºC):</label>
+        <div class="col-6 col-sm-3">
+          <input type="number" nbInput fullWidth id="refusao_fusao_temperatura" required 
+            [(ngModel)]="amostra.refusao_fusao_temperatura" name="refusao_fusao_temperatura" placeholder="ºC">
+        </div>
+        <label class="label col-sm-3 col-6">Tempo de Refusão (min):</label>
+        <div class="col-6 col-sm-3">
+          <input type="number" nbInput fullWidth id="refusao_fusao_tempo" required 
+            [(ngModel)]="amostra.refusao_fusao_tempo" name="refusao_fusao_tempo" placeholder="min">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-6">Temperatura de Tratamento (ºC):</label>
+        <div class="col-6 col-sm-3">
+          <input type="number" nbInput fullWidth id="refusao_trat_temperatura" required 
+                [(ngModel)]="amostra.refusao_trat_temperatura" name="refusao_trat_temperatura" placeholder="ºC">
+        </div>
+        <label class="label col-sm-3 col-6">Tempo de Tratamento (min):</label>
+        <div class="col-6 col-sm-3">
+          <input type="number" nbInput fullWidth id="refusao_trat_tempo" required 
+            [(ngModel)]="amostra.refusao_trat_tempo" name="refusao_trat_tempo" placeholder="min">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="label col-sm-3 col-6">Forno de Refusão:</label>
+        <div class="col-6 col-sm-3">
+          <nb-select id="refusao_forno_fusao" required
+            [(ngModel)]="amostra.refusao_forno_fusao" name="refusao_forno_fusao">
+            <nb-option *ngFor="let refusao_forno_fusao of lista_fornos" [value]="refusao_forno_fusao">
+              {{refusao_forno_fusao}}
+            </nb-option>
+          </nb-select> 
+        </div> 
+        <label class="label col-sm-3 col-6">Forno de Tratamento:</label>
+        <div class="col-6 col-sm-3">
+          <nb-select id="refusao_forno_trat" required
+            [(ngModel)]="amostra.refusao_forno_trat" name="refusao_forno_trat">
+            <nb-option *ngFor="let refusao_forno_trat of lista_fornos" [value]="refusao_forno_trat">
+              {{refusao_forno_trat}}
+            </nb-option>
+          </nb-select> 
+        </div> 
+      </div>     
+      <div class="form-group row">
+        <label class="col-6 col-sm-3 label">Numero de Refusões:</label>
+        <div class="col-6 col-sm-3">
+          <input type="number" nbInput fullWidth id="refusao_numero" required 
+            [(ngModel)]="amostra.refusao_numero" name="refusao_numero" placeholder="0">
+        </div>
+        <label class="label col-sm-3 col-6">Tipo de agitação:</label>
+        <div class="col-6 col-sm-3">
+          <nb-select id="agita_tipo" required 
+            [(ngModel)]="amostra.agita_tipo" name="agita_tipo">
+            <nb-option *ngFor="let agita_tipo of lista_agitacao" [value]="agita_tipo">
+              {{agita_tipo}}
+            </nb-option>
+          </nb-select>
+        </div>
+      </div>   
+      <div class="form-group row">
+        <label for="imputMatriz" class="label col-sm-3 col-6">Observações durante a Refusão:</label>
+        <div class="col-12 col-sm-6">
+          <textarea rows="5" nbInput fullWidth shape="round" nbInput fullWidth id="refusao_obs" required 
+            [(ngModel)]="amostra.refusao_obs" name="refusao_obs" placeholder="Escreva aqui suas observações"></textarea>
+        </div>
+      </div>
       </form>
       </nb-card-body>
     </nb-card>
   </div>
 </div>
 
-<div class="row">
+<div class="row" [hidden]="!obs_checkbox">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
@@ -241,8 +287,8 @@
       </nb-card-header>
       <nb-card-body>
         <form>
-          <textarea rows="5" nbInput fullWidth shape="round"  
-          placeholder="Escreva aqui suas observações"></textarea>
+          <textarea rows="5" nbInput fullWidth shape="round" nbInput fullWidth id="processos_obs" required 
+          [(ngModel)]="amostra.processos_obs" name="processos_obs" placeholder="Escreva aqui suas observações"></textarea>
       </form>
       </nb-card-body>
     </nb-card>
