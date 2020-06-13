@@ -35,8 +35,7 @@ export class AmostraClasse {
     public refusao_trat_temperatura: number, public refusao_trat_tempo: number,
     public refusao_forno_fusao: string, public refusao_forno_trat: string,
     public refusao_numero: number, public refusao_agita: string,
-    public refusao_obs: string,
-    
+    public refusao_obs: string,    
   ) {  }
 
 }

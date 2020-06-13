@@ -25,13 +25,13 @@ export class AmostraProcessosComponent  implements OnInit {
   obs_checkbox: boolean;
   nucle_tempo_total: number;
 
-  constructor() { 
-    if (this.amostra.fusao_forno === '?'){
+  constructor() {
+    if (this.amostra.fusao_forno === '?') {
       this.fornos_checkbox = false;
     } else {
       this.fornos_checkbox = true;
     }
-    if (this.amostra.agita_tipo === 'Nenhuma'){
+    if (this.amostra.agita_tipo === 'Nenhuma') {
       this.agitacao_checkbox = false;
     } else {
       this.agitacao_checkbox = true;
@@ -40,10 +40,10 @@ export class AmostraProcessosComponent  implements OnInit {
       this.nucleacao_checkbox = false;
     } else {
       this.nucleacao_checkbox = true;
-      this.nucle_tempo_total = (this.amostra.nucle_tempo/60)*this.amostra.nucle_ciclos;
+      this.nucle_tempo_total = ( this.amostra.nucle_tempo / 60 ) * this.amostra.nucle_ciclos;
     }
     if (this.amostra.refusao_numero === 0) {
-      this.refusao_checkbox == false;
+      this.refusao_checkbox === false;
     } else {
       this.refusao_checkbox = true;
     }
@@ -53,7 +53,7 @@ export class AmostraProcessosComponent  implements OnInit {
       this.obs_checkbox = true;
     }
   }
-  
+
   ngOnInit() {
   }
 // Função de funcionamento do checkbox dos Agitação
