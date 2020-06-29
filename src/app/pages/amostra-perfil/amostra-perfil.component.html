@@ -245,13 +245,13 @@
           <label class="col-3 col-sm-3 label">Fusão: </label>
           <div class="col-3 col-sm-3">
             <p>
-              {{amostra.fusao_temperatura}}°C / {{amostra.fusao_tempo}}min
+              {{fusao_temperatura_add}}°C / {{fusao_tempo_add}}min
             </p>
           </div>
           <label class="label col-3 col-sm-3">Tratamento:</label>
           <div class="col-3 col-sm-3">
             <p>
-              {{amostra.trat_temperatura}}°C / {{amostra.trat_tempo}}min
+              {{tratamento_temperatura_add}}°C / {{tratemento_tempo_add}}min
             </p>
           </div>
         </div>
@@ -259,13 +259,13 @@
           <label class="col-3 col-sm-3 label">OBS:</label>
           <div class="col-3 col-sm-3">
             <p>
-              {{amostra.fusao_forno}} a {{amostra.fusao_forno_rampa}}/min
+              {{fusao_forno}} a {{amostra.fusao_forno_rampa}}/min
             </p>
           </div>
           <label class="label col-3 col-sm-3"> </label>
           <div class="col-3 col-sm-3">
             <p>
-              {{amostra.trat_forno}} a {{amostra.trat_forno_rampa}}/min
+              {{trat_forno}} a {{amostra.trat_forno_rampa}}/min
             </p>
           </div>
         </div>
@@ -311,11 +311,11 @@
             </p>
           </div>
         </div>
-        <div class="form-group row">
+        <div class="form-group row" [hidden]="esconder_refusao">
           <label class="col-3 col-sm-3 label">Refundida:</label>
           <div class="col-3 col-sm-3">
             <p>
-              {{amostra.refusao_numero}}
+              {{refundida}}
             </p>
           </div>
           <label class="label col-3 col-sm-3">Numero de vezes: </label>
@@ -327,7 +327,7 @@
         </div>
         <div class="form-group row">
           <label class="col-3 col-sm-3 label">Obdervações:</label>
-          {{amostra.processos_obs}}
+          {{observa}}
         </div>
       </nb-card-body>
     </nb-card>

@@ -33,7 +33,7 @@ export const Modelo: AmostraClasse = {
 
     nucle_temperatura: 420, nucle_tempo: 720,
     nucle_forno: 'Forno 1', nucle_forno_rampa: 10,
-    nucle_ciclos: 2, processos_obs: '',
+    nucle_ciclos: 2, processos_obs: 'teste de obs',
 
     refusao_fusao_temperatura: 990, refusao_fusao_tempo: 30,
     refusao_trat_temperatura: 425, refusao_trat_tempo: 120,
