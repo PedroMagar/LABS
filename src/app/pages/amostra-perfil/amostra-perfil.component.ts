@@ -10,7 +10,7 @@ export class AmostraPerfilComponent implements OnInit  {
   amostra = Modelo; // coleta a amostra a ser exibida
 
   esconder_configurar_matriz: boolean; // para controle quando não possui dados gravados
-// ---------------------- bloco de composição 
+// ---------------------- bloco de composição
   esconder_matrizcomp_1: boolean; // esconde se for nada Matriz
   esconder_matrizcomp_2: boolean; // esconde se for nada
   esconder_matrizcomp_3: boolean; // esconde se for nada
@@ -29,12 +29,12 @@ export class AmostraPerfilComponent implements OnInit  {
   fusao_tempo_add: number; // variavel para carregar tempo de fusão
   tratamento_temperatura_add: number; // variavel para carregar temperatura de tratamento
   tratemento_tempo_add: number; // variavel para carregar tempo de tratamento
-  fusao_forno: string;  // carregar o forno de fusão 
+  fusao_forno: string;  // carregar o forno de fusão
   trat_forno: string; // carregar o dorno de tratamento
   observa: string; // carregar observações
   refundida: string;  // Define se foi ou não refundida
   esconder_refusao: boolean;  // Bandeira para mostrar refusão
-//------------------- inicialização
+// ------------------- inicialização
   constructor() {
 // Define se tem dados cadastrados em composição
     if ((this.amostra.matrizcomp_1 === this.padrao) &&
