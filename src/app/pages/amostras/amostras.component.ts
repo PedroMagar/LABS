@@ -58,9 +58,39 @@ export class AmostrasComponent {
     },
   };
 
+  settings_2 = {
+    columns: {
+      id: {
+        title: 'ID',
+        type: 'number',
+      },
+      nome: {
+        title: 'Nome',
+        type: 'string',
+      },
+      matriz: {
+        title: 'Matriz',
+        type: 'string',
+      },
+      dopante: {
+        title: 'Dopante',
+        type: 'string',
+      },
+      autor: {
+        title: 'Autor',
+        type: 'string',
+      },
+      local: {
+        title: 'Local',
+        type: 'string',
+      },
+    },
+  };
+
   source: LocalDataSource = new LocalDataSource();
   amostras: Amostra[] = [];
   selectedAmostra: Amostra;
+
 
   constructor(private amostraService: AmostrasService) {
     this.loadTableAmostras();
