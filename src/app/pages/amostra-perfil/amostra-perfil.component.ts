@@ -100,7 +100,7 @@ export class AmostraPerfilComponent implements OnInit  {
       this.observa = this.amostra.processos_obs;
     }
     if (this.fusao_forno === '?' || this.trat_forno === '?') {
-      this.esconder_fornos = true; 
+      this.esconder_fornos = true;
     } else {
       this.esconder_fornos = false;
     }
