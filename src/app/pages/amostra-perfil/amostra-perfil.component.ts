@@ -34,6 +34,10 @@ export class AmostraPerfilComponent implements OnInit  {
   observa: string; // carregar observações
   refundida: string;  // Define se foi ou não refundida
   esconder_refusao: boolean;  // Bandeira para mostrar refusão
+  esconder_fornos: boolean;
+  esconder_nucle: boolean;
+  esconder_pros_obs: boolean;
+  esconder_pros: boolean;
 // ------------------- inicialização
   constructor() {
 // Define se tem dados cadastrados em composição
@@ -94,6 +98,26 @@ export class AmostraPerfilComponent implements OnInit  {
       this.fusao_forno = this.amostra.fusao_forno;
       this.trat_forno = this.amostra.trat_forno;
       this.observa = this.amostra.processos_obs;
+    }
+    if (this.fusao_forno === '?' || this.trat_forno === '?') {
+      this.esconder_fornos = true; 
+    } else {
+      this.esconder_fornos = false;
+    }
+    if (this.amostra.nucle_ciclos === 0) {
+      this.esconder_nucle = true;
+    } else {
+      this.esconder_nucle = false;
+    }
+    if (this.observa === '') {
+      this.esconder_pros_obs = true;
+    } else {
+      this.esconder_pros_obs = false;
+    }
+    if (this.fusao_temperatura_add === 0 && this.tratamento_temperatura_add === 0) {
+      this.esconder_pros = true;
+    } else {
+      this.esconder_pros = false;
     }
   }
   ngOnInit() {}
