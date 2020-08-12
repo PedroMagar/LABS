@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-// import { AmostrasTableData } from '../../@core/data/amostras-table';
+//import { AmostrasTableData } from '../../@core/data/amostras-table';
 import { AmostrasService } from '../../@core/services/amostra-service';
 import { Amostra } from '../../@core/data/amostra';
 
@@ -57,7 +57,7 @@ export class AmostrasComponent {
       },
     },
   };
-
+// Configuração da tabela MOCK
   settings_2 = {
     columns: {
       id: {

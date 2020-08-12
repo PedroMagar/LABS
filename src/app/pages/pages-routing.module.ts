@@ -12,6 +12,7 @@ import { ModeloComponent } from './modelo/modelo.component';
 import { AmostraPerfilComponent } from './amostra-perfil/amostra-perfil.component';
 import { AmostraComposicaoComponent } from './amostra-composicao/amostra-composicao.component';
 import { AmostraProcessosComponent } from './amostra-processos/amostra-processos.component';
+import { AmostrasTodasComponent } from './amostras-todas/amostras-todas.component';
 
 const routes: Routes = [{
   path: '',
@@ -24,6 +25,10 @@ const routes: Routes = [{
     {
       path: 'amostras',
       component: AmostrasComponent,
+    },
+    {
+      path: 'amostras-todas',
+      component: AmostrasTodasComponent,
     },
     {
       path: 'amostra-perfil',

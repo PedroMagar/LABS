@@ -14,6 +14,7 @@ import { AmostrasModule } from './amostras/amostras.module';
 import { AmostraPerfilModule } from './amostra-perfil/amostra-perfil.module';
 import { AmostraComposicaoModule } from './amostra-composicao/amostra-composicao.module';
 import { AmostraProcessosModule } from './amostra-processos/amostra-processos.module';
+import { AmostraTodasModule } from './amostras-todas/amostra-todas.module';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { AmostraProcessosModule } from './amostra-processos/amostra-processos.mo
     AmostraPerfilModule,
     AmostraComposicaoModule,
     AmostraProcessosModule,
+    AmostraTodasModule,
   ],
   declarations: [
     PagesComponent,

@@ -1,0 +1,28 @@
+<nb-card>
+    <div class="row">
+      <div class="col-xxxl-12">
+        <nb-card>
+        <nb-card-header>Todas as Amostras</nb-card-header>
+        <nb-card-body>
+          <ul class="amostras-todas">
+            <li *ngFor="let amostra of amostras" 
+              [class.selected]="amostra === selectedAmostra"  
+              (click)="onSelect(amostra)">
+              <span class="badge">{{amostra.id}}</span> {{amostra.nome}}
+            </li>
+          </ul>
+          <a *ngIf="selectedAmostra" href="/pages/amostra-perfil" [amostra]="selectedAmostra"> IR</a>
+          <div *ngIf="selectedAmostra">
+            <h2>{{selectedAmostra.name | uppercase}} Sobre</h2>
+            <div><span>id: </span>{{selectedAmostra.id}}</div>
+            <div>
+              <label>Nome:
+                <input [(ngModel)]="selectedAmostra.nome" placeholder="nome"/>
+              </label>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+      </div>
+    </div>
+    </nb-card>

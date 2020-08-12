@@ -8,9 +8,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'Amostras',
+    title: 'Minhas Amostras',
     icon: 'grid-outline',
     link: '/pages/amostras',
+  },
+  {
+    title: 'Todas as Amostras',
+    icon: 'grid-outline',
+    link: '/pages/amostras-todas',
   },
   {
     title: 'Perfil da Amostra',
