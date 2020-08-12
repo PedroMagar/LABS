@@ -16,7 +16,6 @@ export class AmostrasTodasComponent implements OnInit {
 
   ngOnInit() {
   }
-  
   selectedAmostra: AmostraClasse;
 
   onSelect(amostra: AmostraClasse): void {
