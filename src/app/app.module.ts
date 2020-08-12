@@ -20,7 +20,6 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

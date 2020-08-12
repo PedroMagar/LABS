@@ -18,9 +18,8 @@ export class AmostrasTodasComponent implements OnInit {
   }
   
   selectedAmostra: AmostraClasse;
-  
+
   onSelect(amostra: AmostraClasse): void {
     this.selectedAmostra = amostra;
   }
-
 }
