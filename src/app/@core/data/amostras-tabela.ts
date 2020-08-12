@@ -41,7 +41,7 @@ export const Amostras_Todas: AmostraClasse[] = [
     refusao_forno_fusao: 'Forno 1', refusao_forno_trat: 'Forno 2',
     refusao_numero: 0, refusao_agita: 'Manual',
     refusao_obs: 'teste de refusao',
-  }, 
+  },
   {
     id: 2,
     nome: 'TZ 2Eu',
@@ -82,7 +82,7 @@ export const Amostras_Todas: AmostraClasse[] = [
     refusao_forno_fusao: '?', refusao_forno_trat: '?',
     refusao_numero: 0, refusao_agita: 'Nunhuma',
     refusao_obs: '',
-  }, 
+  },
   {
     id: 3,
     nome: 'Modelo',
@@ -123,6 +123,6 @@ export const Amostras_Todas: AmostraClasse[] = [
     refusao_forno_fusao: '?', refusao_forno_trat: '?',
     refusao_numero: 0, refusao_agita: 'Nunhuma',
     refusao_obs: '',
-  }
+  },
 ];
 

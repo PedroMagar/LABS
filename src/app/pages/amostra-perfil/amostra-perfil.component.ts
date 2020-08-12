@@ -1,5 +1,5 @@
-import {Component, OnInit, Input } from '@angular/core';
-import { AmostraClasse } from '../../@core/data/amostra-classe';
+import {Component, OnInit } from '@angular/core';
+// import { AmostraClasse } from '../../@core/data/amostra-classe';
 import { Modelo } from '../../@core/data/amostra-mock';
 
 @Component({
@@ -8,8 +8,8 @@ import { Modelo } from '../../@core/data/amostra-mock';
   templateUrl: './amostra-perfil.component.html',
 })
 export class AmostraPerfilComponent implements OnInit  {
-  
-  //@Input() amostra: AmostraClasse; // coleta a amostra a ser exibida
+
+  // @Input() amostra: AmostraClasse; // coleta a amostra a ser exibida
 
   amostra = Modelo;
 
